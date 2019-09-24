@@ -1,0 +1,18 @@
+{
+  "name": "dora",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    ")"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@cmu-eberly-center/p5.play": "^1.2.0",
+    "p5": "^0.9.0"
+  }
+}
