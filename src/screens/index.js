@@ -6,6 +6,14 @@ const Screens = {
 	screens: {},
 	current: SCREEN_NAMES.MENU,
 
+	setScreen: (screenName) => {
+		Screens.getScreen().exit();
+
+		Screens.current = screenName;
+
+		Screens.getScreen().init();
+	},
+
 	getScreen: () => {
 		return Screens.screens[Screens.current];
 	},

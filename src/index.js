@@ -11,7 +11,7 @@ function mousePressed() {
 }
 
 function draw() {
-	fill(50);
+	fill(...COLORS.GREY);
 	rect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 
 	Screens.getScreen().draw();
