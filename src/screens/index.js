@@ -2,7 +2,7 @@
  * Défini la classe rassemblant les différentes pages.
  */
 
-const Screens = {
+const Screens  = {
 	screens: {},
 	current: SCREEN_NAMES.MENU,
 

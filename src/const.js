@@ -1,6 +1,8 @@
 /**
  * Défini les constantes du jeu.
  */
+const KELLS_SD = ['police/Kells_SD.ttf'];
+
 
 const [SCREEN_WIDTH, SCREEN_HEIGHT] = [1080, 600];
 const [SCREEN_CENTER_WIDTH, SCREEN_CENTER_HEIGHT] = [SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2];
@@ -12,10 +14,17 @@ const BAR_TEXT_SIZE = BAR_HEIGHT / 2;
 const SCREEN_NAMES = {
 	MENU: 'menu',
 	GAME: 'game',
+	COMPETENCE: 'competence',
+	ACTION: 'action',
 }
 
 const [BUTTON_WIDTH, BUTTON_HEIGHT] = [SCREEN_WIDTH / 1.5, 75];
 const BUTTON_CENTER_X = (SCREEN_WIDTH - BUTTON_WIDTH) / 2;
+
+const MAISON1 = {
+	OCCUPANT: 2,
+	CROYANT: 10,
+}
 
 const COLORS = {
 	BLUE: [10, 10, 255],
@@ -26,4 +35,7 @@ const COLORS = {
 	LIGHT_GREY: [200],
 	GREY: [50],
 	BLACK: [5],
+	GREYTRANSPARENT: [0.5, 191, 255, 30],
+	GREYTRANSPARENT2: [0, 191, 255, 80],
+	BEIGE: [191, 170, 143],
 };

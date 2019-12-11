@@ -83,6 +83,6 @@ const GAME_SCREEN_BAR = {
 		fill(...COLORS.GREY);
 		textAlign(CENTER, CENTER);
 		textSize(10);
-		text(['⏵⏵', '⏵⏵⏵', '⏴⏴'][GAME_SCREEN.speed], ...QUICK_BUTTON);
+		text(['⏵⏵', '⏵⏵⏵'][GAME_SCREEN.speed], ...QUICK_BUTTON);
 	},
 };

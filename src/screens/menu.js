@@ -3,11 +3,16 @@
  */
 
 const PLAY_POSITION = [BUTTON_CENTER_X, SCREEN_HEIGHT / 2, BUTTON_WIDTH, BUTTON_HEIGHT];
+const MOVIE_MENU = ['src/screens/movie/fond_menu.mp4']
 
 const MENU_SCREEN = {
 	name: SCREEN_NAMES.MENU,
 
 	init: () => {
+		MENU_SCREEN.video = createVideo(MOVIE_MENU);
+		MENU_SCREEN.video.loop();
+		MENU_SCREEN.video.size(SCREEN_WIDTH, SCREEN_HEIGHT);
+		MENU_SCREEN.video.hide();
 
 	},
 
@@ -22,8 +27,13 @@ const MENU_SCREEN = {
 	},
 
 	draw: () => {
+		MENU_SCREEN.drawVideo();
 		MENU_SCREEN.drawTitle();
 		MENU_SCREEN.drawPlay();
+	},
+
+	drawVideo: () => {
+		  image(MENU_SCREEN.video, 0, 0);
 	},
 
 	drawTitle: () => {
@@ -31,11 +41,12 @@ const MENU_SCREEN = {
 		noStroke();
 		textSize(72);
 		textAlign(CENTER, CENTER);
-		text("Bienvenue dans Dora !", width / 2, height / 4);
+		// textFont(loadKells_SD);
+		text("Real Agonie", width / 2, height / 4);
 	},
 
 	drawPlay: () => {
-		fill(...COLORS.BLACK);
+		fill(...COLORS.GREYTRANSPARENT);
 		rect(...PLAY_POSITION, BUTTON_HEIGHT / 2);
 		fill(...COLORS.LIGHT_GREY);
 		textSize(36);

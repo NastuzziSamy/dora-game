@@ -2,8 +2,11 @@
  * Défini l'affichage, le chargement et les actions du jeu.
  */
 
+
+
 const DIAMETER_PAUSE_BUTTON = (BAR_HEIGHT - 10) / 2;
 const SPEEDS = [5, 10, 25];  // increment final en 1 sec: 0.1 s / 100 intervals/s * 1s
+
 
 const GAME_SCREEN = Object.assign({
 	name: SCREEN_NAMES.GAME,
@@ -14,9 +17,9 @@ const GAME_SCREEN = Object.assign({
 	speed: 0,
 	stats: {
 		total: 40,
-		dead: 1,
-		infected: 2,
-		search: 3,
+		dead: 0,
+		infected: 0,
+		search: 0,
 	},
 
 	init: () => {
@@ -32,9 +35,11 @@ const GAME_SCREEN = Object.assign({
 			GAME_SCREEN.togglePause();
 		} else if (mouseInRect(...QUICK_BUTTON, DIAMETER_PAUSE_BUTTON, DIAMETER_PAUSE_BUTTON, true)) {
 			GAME_SCREEN.toggleSpeed();
-		} else {
-			Screens.setScreen(SCREEN_NAMES.MENU);
-		}
+		} else if (mouseInRect(...COMPETENCE_BUTTON,  DIAMETER_PAUSE_BUTTON, DIAMETER_PAUSE_BUTTON, true)) {
+			Screens.setScreen(SCREEN_NAMES.COMPETENCE);
+		} else if (mouseInRect(...HOUSE1)) {
+		Screens.setScreen(SCREEN_NAMES.ACTION);
+	}
 	},
 
 	draw: () => {
@@ -74,6 +79,6 @@ const GAME_SCREEN = Object.assign({
 	toggleSpeed: () => {
 		GAME_SCREEN.speed = (GAME_SCREEN.speed + 1) % SPEEDS.length
 	}
-}, GAME_SCREEN_BAR, GAME_SCREEN_WORLD);
+}, GAME_SCREEN_BAR, GAME_SCREEN_WORLD );
 
 Screens.addScreen(GAME_SCREEN);
