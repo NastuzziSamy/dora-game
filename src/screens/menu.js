@@ -13,12 +13,13 @@ const MENU_SCREEN = {
 		MENU_SCREEN.video.loop();
 		MENU_SCREEN.video.size(SCREEN_WIDTH, SCREEN_HEIGHT);
 		MENU_SCREEN.video.hide();
-
 	},
 
 	exit: () => {
 
 	},
+
+
 
 	mousePressed: () => {
 		if (mouseInRect(...PLAY_POSITION)) {
@@ -41,7 +42,7 @@ const MENU_SCREEN = {
 		noStroke();
 		textSize(72);
 		textAlign(CENTER, CENTER);
-		// textFont(loadKells_SD);
+		textFont(loadKells_SD);
 		text("Real Agonie", width / 2, height / 4);
 	},
 

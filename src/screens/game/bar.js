@@ -47,11 +47,11 @@ const GAME_SCREEN_BAR = {
 		noStroke();
 		textSize(22);
 		textAlign(RIGHT, CENTER);
-		text(alive + '% sains 👨', BAR_WIDTH - 10, BAR_CENTER_HEIGHT);
+		text(alive + '% sains 👨   ' + DEMON.timer, BAR_WIDTH - 10, BAR_CENTER_HEIGHT);
 	},
 
 	drawTimer: () => {
-		const timer = Math.ceil(GAME_SCREEN.timer / 10);
+		const timer = Math.ceil(GAME_SCREEN.timer / 10); //retourne le plus petit entier supérieur ou égal au nombre donné.
 		let sec = timer % 60;
 		let min = (timer - sec) / 60;
 

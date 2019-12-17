@@ -1,7 +1,7 @@
 /**
  * Défini le jeu.
  */
-var loadKells_SD;
+
 
 function setup() {
 	createCanvas(SCREEN_WIDTH, SCREEN_HEIGHT);
@@ -20,7 +20,10 @@ function draw() {
 	Screens.getScreen().draw();
 }
 
-
 function preload() {
-	// loadKells_SD = loadFont(KELLS_SD);
+	loadKells_SD =loadFont(KELLS_SD) ;
+}
+
+function toggleStart(HOUSE) {
+
 }

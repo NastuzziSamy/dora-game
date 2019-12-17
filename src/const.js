@@ -26,6 +26,47 @@ const MAISON1 = {
 	CROYANT: 10,
 }
 
+const MAISON2 = {
+	OCCUPANT: 6,
+	CROYANT: 40,
+}
+
+const MAISON3 = {
+	OCCUPANT: 1,
+	CROYANT: 60,
+}
+
+const MAISON4 = {
+	OCCUPANT: 3,
+	CROYANT: 20,
+}
+
+const MAISON5 = {
+	OCCUPANT: 2,
+	CROYANT: 10,
+}
+
+const MAISON6 = {
+	OCCUPANT: 2,
+	CROYANT: 10,
+}
+
+const MAISON7 = {
+	OCCUPANT: 1,
+	CROYANT: 5,
+}
+
+const MAISON8 = {
+	OCCUPANT: 4,
+	CROYANT: 25,
+}
+
+const MAISON9 = {
+	OCCUPANT: 3,
+	CROYANT: 15,
+}
+
+
 const COLORS = {
 	BLUE: [10, 10, 255],
 	GREEN: [10, 255, 10],

@@ -16,11 +16,31 @@ const HOUSE9 = [15, BAR_HEIGHT + 250, 150, 285];
 const GAME_SCREEN_WORLD = {
 	drawWorld: () => {
 		GAME_SCREEN.drawRoad();
+		GAME_SCREEN.drawPersonnage();
 },
 
 
+	drawPersonnage: () =>{
+		if (DEMON.in){
+			const timer = Math.ceil(DEMON.timer);
+			let xp=timer - DEMON.experience*500;
+			if (xp>500)
+			{
+				DEMON.experience +=1;
+				GAME_SCREEN.drawCompetencePlus1();
+			}
+		}
+	},
 
 
+
+	drawCompetencePlus1: () => {
+		fill(...COLORS.GREYTRANSPARENT2)
+		rect(400, BAR_HEIGHT + 60, 250,20)
+		fill(...COLORS.WHITE);
+		textSize(20);
+		text("Vous venez de gagner un point d'experience", 405 , BAR_HEIGHT);
+	},
 
 
 	drawRoad: () => {
@@ -41,44 +61,38 @@ const GAME_SCREEN_WORLD = {
 
 		noStroke();
 
-		GAME_SCREEN_WORLD.drawHouse1();
-
 		GAME_SCREEN_WORLD.drawHouses();
 		GAME_SCREEN_WORLD.drawInfo();
 		GAME_SCREEN_WORLD.drawButtonCompetence();
 	},
 
+	drawHouses: () => {
 
-
-
-	drawHouse1: () => {
 		fill(...VARHOUSE1.couleurs);
 		rect(...HOUSE1);
-},
 
-	drawHouses: () => {
-		fill(...COLORS.BEIGE);
+		fill(...VARHOUSE2.couleurs);
 		rect(...HOUSE2);
 
-		fill(...COLORS.BEIGE);
+		fill(...VARHOUSE3.couleurs);
 		rect(...HOUSE3);
 
-		fill(...COLORS.BEIGE);
+		fill(...VARHOUSE4.couleurs);
 		rect(...HOUSE4);
 
-		fill(...COLORS.BEIGE);
+		fill(...VARHOUSE5.couleurs);
 		rect(...HOUSE5);
 
-		fill(...COLORS.BEIGE);
+		fill(...VARHOUSE6.couleurs);
 		rect(...HOUSE6);
 
-		fill(...COLORS.BEIGE);
+		fill(...VARHOUSE7.couleurs);
 		rect(...HOUSE7);
 
-		fill(...COLORS.BEIGE);
+		fill(...VARHOUSE8.couleurs);
 		rect(...HOUSE8);
 
-		fill(...COLORS.BEIGE);
+		fill(...VARHOUSE9.couleurs);
 		rect(...HOUSE9);/**/
 
 	},

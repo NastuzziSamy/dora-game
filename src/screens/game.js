@@ -16,7 +16,7 @@ const GAME_SCREEN = Object.assign({
 	paused: false,
 	speed: 0,
 	stats: {
-		total: 40,
+		total: MAISON1.OCCUPANT + MAISON2.OCCUPANT+MAISON3.OCCUPANT+MAISON4.OCCUPANT+MAISON5.OCCUPANT+MAISON6.OCCUPANT+MAISON7.OCCUPANT+MAISON8.OCCUPANT+MAISON9.OCCUPANT	,
 		dead: 0,
 		infected: 0,
 		search: 0,
@@ -50,6 +50,16 @@ const GAME_SCREEN = Object.assign({
 		GAME_SCREEN.drawWorld();
 	},
 
+	incrementDemonTimer: (seconds) => {
+		if (seconds === undefined) {
+			seconds = SPEEDS[GAME_SCREEN.speed];
+		}
+
+		DEMON.timer = (DEMON.timer + seconds);
+
+
+	},
+
 	incrementTimer: (seconds) => {
 		if (seconds === undefined) {
 			seconds = SPEEDS[GAME_SCREEN.speed];
@@ -60,10 +70,18 @@ const GAME_SCREEN = Object.assign({
 
 	startTimer: () => {
 		GAME_SCREEN.timerInterval = setInterval(() => GAME_SCREEN.incrementTimer(), 100);
+		if (DEMON.in)
+		{
+			DEMON.timerInterval= setInterval(() => GAME_SCREEN.incrementDemonTimer(), 100);
+		}
 	},
 
 	pauseTimer: () => {
 		clearInterval(GAME_SCREEN.timerInterval);
+		if (DEMON.in)
+		{
+			clearInterval(DEMON.timerInterval);
+		}
 	},
 
 	togglePause: () => {
