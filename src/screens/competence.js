@@ -1,17 +1,19 @@
 /**
 * Défini l'affichage de l'arbre des compétences .
 */
+const IMAGE_DEMON = ['logo/demon.png'];
 const DIAMETER_COMPETENCE_BUTTON = (BAR_HEIGHT- 10) / 2;
 
 const EXIT_BUTTON = [SCREEN_HEIGHT/2 - 250, SCREEN_WIDTH/2,];
 //const GAUCHE =
 //const DROITE
 
-const COMPETENCE_SCREEN = {
+const COMPETENCE_SCREEN = Object.assign({
 	name: SCREEN_NAMES.COMPETENCE,
 
-	init: () => {
 
+	init: () => {
+		COMPETENCE_SCREEN.image = loadImage(IMAGE_DEMON);
   },
 
 	exit: () => {
@@ -30,36 +32,10 @@ const COMPETENCE_SCREEN = {
 
 
 	draw: () => {
-	COMPETENCE_SCREEN.drawPremier();
-	COMPETENCE_SCREEN.drawDroite();
-	COMPETENCE_SCREEN.drawGauche();
-	COMPETENCE_SCREEN.drawButtonWorld();
-	},
+	COMPETENCE_SCREEN.drawInterface();
+	COMPETENCE_SCREEN.drawBar();
+	}
 
-	drawPremier: () => {
-
-
-	},
-
-	drawDroite: () => {
-
-	},
-
-	drawGauche: () => {
-
-	},
-
-	drawButtonWorld: () => {
-
-		fill(...COLORS.GREYTRANSPARENT);
-		circle(...EXIT_BUTTON, DIAMETER_COMPETENCE_BUTTON + 10);
-		fill(...COLORS.RED);
-		textAlign(CENTER, CENTER);
-		textSize(22);
-		text(['X'], ...EXIT_BUTTON);
-	},
-
-};
-
+}, GAME_SCREEN_INTERFACE, GAME_SCREEN_BAR_COMPETENCE);
 
 Screens.addScreen(COMPETENCE_SCREEN);

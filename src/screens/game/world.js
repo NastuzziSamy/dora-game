@@ -23,10 +23,11 @@ const GAME_SCREEN_WORLD = {
 	drawPersonnage: () =>{
 		if (DEMON.in){
 			const timer = Math.ceil(DEMON.timer);
-			let xp=timer - DEMON.experience*500;
-			if (xp>500)
-			{
+			let xp=timer - DEMON.experience*PALIER_EXPERIENCE_DEMON;
+			if (xp>PALIER_EXPERIENCE_DEMON){
 				DEMON.experience +=1;
+			}
+			if (xp>PALIER_EXPERIENCE_DEMON && xp <20){
 				GAME_SCREEN.drawCompetencePlus1();
 			}
 		}
@@ -35,11 +36,11 @@ const GAME_SCREEN_WORLD = {
 
 
 	drawCompetencePlus1: () => {
-		fill(...COLORS.GREYTRANSPARENT2)
-		rect(400, BAR_HEIGHT + 60, 250,20)
-		fill(...COLORS.WHITE);
-		textSize(20);
-		text("Vous venez de gagner un point d'experience", 405 , BAR_HEIGHT);
+			fill(...COLORS.GREYTRANSPARENT2)
+			rect(400, BAR_HEIGHT + 60, 250,20)
+			fill(...COLORS.WHITE);
+			textSize(20);
+			text("Vous venez de gagner un point d'experience ", 405 , BAR_HEIGHT);
 	},
 
 
