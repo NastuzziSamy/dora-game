@@ -8,7 +8,7 @@ var HOUSES = [
 		alive: 230,
 		infected: 0,
 		dead: 0,
-		protection: 10,
+		protection: 0.10,
 	},
 	// Maison 1
 	{
@@ -17,7 +17,7 @@ var HOUSES = [
 		alive: 670,
 		infected: 0,
 		dead: 0,
-		protection: 40,
+		protection: 0.40,
 	},
 	// Maison 2
 	{
@@ -26,7 +26,7 @@ var HOUSES = [
 		alive: 140,
 		infected: 0,
 		dead: 0,
-		protection: 60,
+		protection: 0.60,
 	},
 	// Maison 3
 	{
@@ -35,7 +35,7 @@ var HOUSES = [
 		alive: 310,
 		infected: 0,
 		dead: 0,
-		protection: 20,
+		protection: 0.20,
 	},
 	// Maison 4
 	{
@@ -44,7 +44,7 @@ var HOUSES = [
 		alive: 260,
 		infected: 0,
 		dead: 0,
-		protection: 10,
+		protection: 0.10,
 	},
 	// Maison 5
 	{
@@ -53,7 +53,7 @@ var HOUSES = [
 		alive: 430,
 		infected: 0,
 		dead: 0,
-		protection: 35,
+		protection: 0.35,
 	},
 	// Maison 6
 	{
@@ -62,7 +62,7 @@ var HOUSES = [
 		alive: 940,
 		infected: 0,
 		dead: 0,
-		protection: 70,
+		protection: 0.70,
 	},
 	// Maison 7
 	{
@@ -71,7 +71,7 @@ var HOUSES = [
 		alive: 620,
 		infected: 0,
 		dead: 0,
-		protection: 20,
+		protection: 0.20,
 	},
 	// Maison 8
 	{
@@ -80,6 +80,6 @@ var HOUSES = [
 		alive: 130,
 		infected: 0,
 		dead: 0,
-		protection: 80,
+		protection: 0.80,
 	},
 ];

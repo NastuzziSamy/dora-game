@@ -4,7 +4,7 @@ var DEMON = {
   xp: 25,
   xp_step: 800,
   possession: 2,
-  attack: 1,
+  attack: 0.2,
   defense: 0,
   skills: {
     possession_one: 0,

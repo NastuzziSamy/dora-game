@@ -76,9 +76,10 @@ const ACTION_SCREEN = {
 	attack: () => {
 		if (ACTION_SCREEN.current_house) {
 			let house = ACTION_SCREEN.current_house;
+			let ratio_protection = (1 - house.protection);
 
 			if (house.infected) {
-				let ratio_dead = DEMON.attack;
+				let ratio_dead = DEMON.attack * ((Math.random() * 0.8) + 0.4) * ratio_protection;
 				
 				if (ratio_dead > house.infected) {
 					ratio_dead = house.infected;
@@ -88,10 +89,11 @@ const ACTION_SCREEN = {
 				}
 
 				house.dead += ratio_dead;
+				house.protection -= (ratio_dead / (house.alive + house.infected + house.dead)) * house.protection * 5;
 			}
 
 			if (house.alive) {
-				let ratio_infected = DEMON.possession;
+				let ratio_infected = DEMON.possession * ((Math.random() * 0.8) + 0.4) * ratio_protection;
 
 				if (ratio_infected > house.alive) {
 					ratio_alive = house.alive;

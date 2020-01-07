@@ -101,12 +101,12 @@ const GAME_SCREEN_WORLD = {
 				rect(400, BAR_HEIGHT + 60, 250,150)
 				fill(...COLORS.WHITE);
 				textSize(20);
-				text("Vivants: " + house.alive, 640, BAR_HEIGHT + 60 + 25);
-				text("Infectés: " + house.infected, 640, BAR_HEIGHT + 60 + 50);
-				text("Morts: " + house.dead, 640, BAR_HEIGHT + 60 + 75);
+				text("Vivants: " + Math.ceil(house.alive), 640, BAR_HEIGHT + 60 + 25);
+				text("Infectés: " + Math.floor(house.infected), 640, BAR_HEIGHT + 60 + 50);
+				text("Morts: " + Math.floor(house.dead), 640, BAR_HEIGHT + 60 + 75);
 				fill(...COLORS.WHITE);
 				textSize(20);
-				text("Croyant: " + house.protection + "%", 640, BAR_HEIGHT + 60 + 100);
+				text("Croyant: " + Math.floor(house.protection * 100) + "%", 640, BAR_HEIGHT + 60 + 100);
 
 				break;
 			}

@@ -71,10 +71,14 @@ const GAME_SCREEN = Object.assign({
 	},
 
 	startTimer: () => {
+		GAME_SCREEN.paused = false;
+
 		GAME_SCREEN.timerInterval = setInterval(() => GAME_SCREEN.incrementTimer(), 100);
 	},
 
 	pauseTimer: () => {
+		GAME_SCREEN.paused = true;
+
 		clearInterval(GAME_SCREEN.timerInterval);
 	},
 
@@ -84,8 +88,6 @@ const GAME_SCREEN = Object.assign({
 		} else {
 			GAME_SCREEN.pauseTimer();
 		}
-
-		GAME_SCREEN.paused = !GAME_SCREEN.paused;
 	},
 
 	toggleSpeed: () => {
