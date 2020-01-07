@@ -2,7 +2,7 @@ var DEMON = {
   in:false,
   maison: null,
   timer:0*0*0,
-  experience: 25,
+  experience: 1,
   attaque: 0,
   capacite_attaque : {
     attaqueun:0,

@@ -27,9 +27,11 @@ const GAME_SCREEN_WORLD = {
 			if (xp>PALIER_EXPERIENCE_DEMON){
 				DEMON.experience +=1;
 			}
-			if (xp>PALIER_EXPERIENCE_DEMON || xp<100){
+			if (xp>PALIER_EXPERIENCE_DEMON || xp<70){
 				GAME_SCREEN.drawInformation("Vous venez de gagner un point d'experience ");
 			}
+			if (DEMON.possesion>0)
+				let 
 		}
 	},
 

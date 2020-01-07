@@ -3,7 +3,6 @@
  */
 
 const PLAY_POSITION = [BUTTON_CENTER_X, SCREEN_HEIGHT / 2, BUTTON_WIDTH, BUTTON_HEIGHT];
-const MOVIE_MENU = ['src/screens/movie/fond_menu.mp4']
 
 const MENU_SCREEN = {
 	name: SCREEN_NAMES.MENU,

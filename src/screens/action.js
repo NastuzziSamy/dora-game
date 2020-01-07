@@ -2,8 +2,8 @@
 * Défini l'affichage des actions .
 */
 
-const QUIT_BUTTON = [SCREEN_HEIGHT/2, SCREEN_WIDTH/2,];
-const ATTACK_BUTTON = [BUTTON_CENTER_X, SCREEN_HEIGHT / 2, BUTTON_WIDTH, BUTTON_HEIGHT];
+const QUIT_BUTTON = [1000,535 ,];
+const ATTACK_BUTTON = [450, 500, 360, 70];
 const BRUME_ECRAN = [0,0,SCREEN_WIDTH, SCREEN_HEIGHT-BAR_HEIGHT];
 
 
@@ -12,7 +12,12 @@ const ACTION_SCREEN = {
 
 
  init: () => {
+   ACTION_SCREEN.video = createVideo(MOVIE_MENU);
+   ACTION_SCREEN.video.loop();
+   ACTION_SCREEN.video.size(SCREEN_WIDTH, SCREEN_HEIGHT);
+   ACTION_SCREEN.video.hide();
 
+   ACTION_SCREEN.image = loadImage(IMAGE_DEMON_ENTIER);
  },
 
  exit: () => {
@@ -125,21 +130,31 @@ const ACTION_SCREEN = {
 
 
  draw: () => {
- ACTION_SCREEN.drawAction();
- ACTION_SCREEN.drawQuit();
+ 	ACTION_SCREEN.drawVideo();
+  ACTION_SCREEN.drawPersonnage();
+  ACTION_SCREEN.drawAction();
+  ACTION_SCREEN.drawQuit();
+ },
+
+ drawVideo: () => {
+     image(ACTION_SCREEN.video, 0, 0);
+ },
+
+ drawPersonnage: () => {
+    image(ACTION_SCREEN.image, -150, 50);
  },
 
  drawAction: () => {
    stroke(...COLORS.BLACK);
-   strokeWeight(4);
-   fill(...COLORS.WHITE);
+   strokeWeight(2);
+   fill(...COLORS.GREYTRANSPARENT);
    rect(...ATTACK_BUTTON, BUTTON_HEIGHT / 2);
    noStroke()
-   fill(...COLORS.BLACK);
-   textSize(36);
+   fill(...COLORS.WHITE);
+   textSize(20);
    textFont(loadKells_SD);
-   textAlign(CENTER, CENTER);
-   text("Rentrer dans la maison", width / 2, (BUTTON_HEIGHT + SCREEN_HEIGHT) / 2);
+   textAlign(CENTER,CENTER);
+   text("Rentrer dans l'himeuble",630,535);
  },
 
 drawQuit: () => {

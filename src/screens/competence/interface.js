@@ -63,8 +63,8 @@ const GAME_SCREEN_INTERFACE = {
 		textFont("Arial");
 	  textSize(22);
 	  text(['A'], ...BUTTON_ATTAQUE.ATTAQUEUN);
-		if (mouseInRect(...BUTTON_ATTAQUE.attaqueun,DIAMETER_COMPETENCE_BUTTON,DIAMETER_COMPETENCE_BUTTON,true)){
-			COMPETENCE_SCREEN.drawInformationCompetence("Attaque débutant - "+ DEMON.capacite_attaque.attaqueun +"/"+BUTTON_ATTAQUE.attaqueun);
+		if (mouseInRect(...BUTTON_ATTAQUE.ATTAQUEUN,DIAMETER_COMPETENCE_BUTTON,DIAMETER_COMPETENCE_BUTTON,true)){
+			COMPETENCE_SCREEN.drawInformationCompetence("Attaque débutant - "+ DEMON.capacite_attaque.attaqueun +"/"+BUTTON_ATTAQUE.nattaqueun);
 		}
 
 		fill(...COLORS.BLANC_TRANSPARENT);
@@ -74,8 +74,8 @@ const GAME_SCREEN_INTERFACE = {
 		textFont("Arial");
 	  textSize(22);
 	  text(['A'], ...BUTTON_ATTAQUE.ATTAQUEDEUX);
-		if (mouseInRect(...BUTTON_ATTAQUE.attaquedeux,DIAMETER_COMPETENCE_BUTTON,DIAMETER_COMPETENCE_BUTTON,true)){
-			COMPETENCE_SCREEN.drawInformationCompetence("Attanquant confimé, il peut tuer - "+ DEMON.capacite_attaque.attaquedeux +"/"+BUTTON_ATTAQUE.attaquedeux);
+		if (mouseInRect(...BUTTON_ATTAQUE.ATTAQUEDEUX,DIAMETER_COMPETENCE_BUTTON,DIAMETER_COMPETENCE_BUTTON,true)){
+			COMPETENCE_SCREEN.drawInformationCompetence("Attanquant confimé, il peut tuer - "+ DEMON.capacite_attaque.attaquedeux +"/"+BUTTON_ATTAQUE.nattaquedeux);
 		}
 
 		if (mouseInRect(...CANVAS_ATTAQUE)){

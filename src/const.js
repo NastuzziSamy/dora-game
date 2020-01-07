@@ -24,6 +24,11 @@ const BUTTON_CENTER_X = (SCREEN_WIDTH - BUTTON_WIDTH) / 2;
 
 const PALIER_EXPERIENCE_DEMON = 800;
 
+const IMAGE_DEMON = ['logo/demon.png'];
+const IMAGE_DEMON_ENTIER = ['logo/demon_entier.png'];
+const MOVIE_MENU = ['src/screens/movie/fond_menu.mp4']
+
+
 const MAISON1 = {
 	OCCUPANT: 23,
 	CROYANT: 10,
