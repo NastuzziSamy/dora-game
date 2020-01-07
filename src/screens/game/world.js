@@ -1,6 +1,6 @@
 const ROOT_ROAD = [15, BAR_HEIGHT + 200, SCREEN_WIDTH - 30, 40];
 const ROAD_BORDER = 4;
-const COMPETENCE_BUTTON = [SCREEN_HEIGHT/2 - 250, SCREEN_WIDTH/2,];
+const SKILL_BUTTON = [SCREEN_HEIGHT/2 - 250, SCREEN_WIDTH/2,];
 
 const HOUSE1 = [15, BAR_HEIGHT + 15, 200, 175];
 const HOUSE2 = [275, BAR_HEIGHT + 15, 215, 175];
@@ -23,12 +23,12 @@ const GAME_SCREEN_WORLD = {
 	drawPersonnage: () =>{
 		if (DEMON.in){
 			const timer = Math.ceil(DEMON.timer);
-			let xp=timer - DEMON.experience*PALIER_EXPERIENCE_DEMON;
+			let xp=timer - DEMON.xp*PALIER_EXPERIENCE_DEMON;
 			if (xp>PALIER_EXPERIENCE_DEMON){
-				DEMON.experience +=1;
+				DEMON.xp +=1;
 			}
 			if (xp>PALIER_EXPERIENCE_DEMON || xp<100){
-				GAME_SCREEN.drawInformation("Vous venez de gagner un point d'experience ");
+				GAME_SCREEN.drawInformation("Vous venez de gagner un point d'expérience ");
 			}
 		}
 	},
@@ -105,7 +105,7 @@ const GAME_SCREEN_WORLD = {
 				rect(400, BAR_HEIGHT + 60, 250,150)
 				fill(...COLORS.WHITE);
 				textSize(20);
-				text("Nombre d'occupant :" + MAISON1.OCCUPANT, 640 , BAR_HEIGHT + 60+50);
+				text("Nombre d'occupant :" + MAISON1.PEOPLE, 640 , BAR_HEIGHT + 60+50);
 				fill(...COLORS.WHITE);
 				textSize(20);
 				text("Croyant :" + MAISON1.CROYANT + "%",640,BAR_HEIGHT + 60+ 100);
@@ -117,7 +117,7 @@ const GAME_SCREEN_WORLD = {
 				rect(400, BAR_HEIGHT + 60, 250,150)
 				fill(...COLORS.WHITE);
 				textSize(20);
-				text("Nombre d'occupant :" + MAISON2.OCCUPANT, 640 , BAR_HEIGHT + 60+50);
+				text("Nombre d'occupant :" + MAISON2.PEOPLE, 640 , BAR_HEIGHT + 60+50);
 				fill(...COLORS.WHITE);
 				textSize(20);
 				text("Croyant :" + MAISON2.CROYANT + "%",640,BAR_HEIGHT + 60+ 100);
@@ -129,7 +129,7 @@ const GAME_SCREEN_WORLD = {
 				rect(400, BAR_HEIGHT + 60, 250,150)
 				fill(...COLORS.WHITE);
 				textSize(20);
-				text("Nombre d'occupant :" + MAISON3.OCCUPANT, 640 , BAR_HEIGHT + 60+50);
+				text("Nombre d'occupant :" + MAISON3.PEOPLE, 640 , BAR_HEIGHT + 60+50);
 				fill(...COLORS.WHITE);
 				textSize(20);
 				text("Croyant :" + MAISON3.CROYANT + "%",640,BAR_HEIGHT + 60+ 100);
@@ -141,7 +141,7 @@ const GAME_SCREEN_WORLD = {
 				rect(400, BAR_HEIGHT + 60, 250,150)
 				fill(...COLORS.WHITE);
 				textSize(20);
-				text("Nombre d'occupant :" + MAISON4.OCCUPANT, 640 , BAR_HEIGHT + 60+50);
+				text("Nombre d'occupant :" + MAISON4.PEOPLE, 640 , BAR_HEIGHT + 60+50);
 				fill(...COLORS.WHITE);
 				textSize(20);
 				text("Croyant :" + MAISON4.CROYANT + "%",640,BAR_HEIGHT + 60+ 100);
@@ -153,7 +153,7 @@ const GAME_SCREEN_WORLD = {
 				rect(400, BAR_HEIGHT + 60, 250,150)
 				fill(...COLORS.WHITE);
 				textSize(20);
-				text("Nombre d'occupant :" + MAISON5.OCCUPANT, 640 , BAR_HEIGHT + 60+50);
+				text("Nombre d'occupant :" + MAISON5.PEOPLE, 640 , BAR_HEIGHT + 60+50);
 				fill(...COLORS.WHITE);
 				textSize(20);
 				text("Croyant :" + MAISON5.CROYANT + "%",640,BAR_HEIGHT + 60+ 100);
@@ -165,7 +165,7 @@ const GAME_SCREEN_WORLD = {
 				rect(400, BAR_HEIGHT + 60, 250,150)
 				fill(...COLORS.WHITE);
 				textSize(20);
-				text("Nombre d'occupant :" + MAISON6.OCCUPANT, 640 , BAR_HEIGHT + 60+50);
+				text("Nombre d'occupant :" + MAISON6.PEOPLE, 640 , BAR_HEIGHT + 60+50);
 				fill(...COLORS.WHITE);
 				textSize(20);
 				text("Croyant :" + MAISON6.CROYANT + "%",640,BAR_HEIGHT + 60+ 100);
@@ -177,7 +177,7 @@ const GAME_SCREEN_WORLD = {
 				rect(400, BAR_HEIGHT + 60, 250,150)
 				fill(...COLORS.WHITE);
 				textSize(20);
-				text("Nombre d'occupant :" + MAISON7.OCCUPANT, 640 , BAR_HEIGHT + 60+50);
+				text("Nombre d'occupant :" + MAISON7.PEOPLE, 640 , BAR_HEIGHT + 60+50);
 				fill(...COLORS.WHITE);
 				textSize(20);
 				text("Croyant :" + MAISON7.CROYANT + "%",640,BAR_HEIGHT + 60+ 100);
@@ -189,7 +189,7 @@ const GAME_SCREEN_WORLD = {
 				rect(400, BAR_HEIGHT + 60, 250,150)
 				fill(...COLORS.WHITE);
 				textSize(20);
-				text("Nombre d'occupant :" + MAISON8.OCCUPANT, 640 , BAR_HEIGHT + 60+50);
+				text("Nombre d'occupant :" + MAISON8.PEOPLE, 640 , BAR_HEIGHT + 60+50);
 				fill(...COLORS.WHITE);
 				textSize(20);
 				text("Croyant :" + MAISON8.CROYANT + "%",640,BAR_HEIGHT + 60+ 100);
@@ -201,7 +201,7 @@ const GAME_SCREEN_WORLD = {
 				rect(400, BAR_HEIGHT + 60, 250,150)
 				fill(...COLORS.WHITE);
 				textSize(20);
-				text("Nombre d'occupant :" + MAISON9.OCCUPANT, 640 , BAR_HEIGHT + 60+50);
+				text("Nombre d'occupant :" + MAISON9.PEOPLE, 640 , BAR_HEIGHT + 60+50);
 				fill(...COLORS.WHITE);
 				textSize(20);
 				text("Croyant :" + MAISON9.CROYANT + "%",640,BAR_HEIGHT + 60+ 100);
@@ -213,11 +213,11 @@ const GAME_SCREEN_WORLD = {
 
 	drawButtonCompetence: () => {
 		fill(...COLORS.GREYTRANSPARENT);
-		circle(...COMPETENCE_BUTTON, DIAMETER_PAUSE_BUTTON + 10);
+		circle(...SKILL_BUTTON, DIAMETER_PAUSE_BUTTON + 10);
 		fill(...COLORS.YELLOW);
 		textAlign(CENTER, CENTER);
 		textSize(22);
-		text(['C'], ...COMPETENCE_BUTTON);
+		text(['C'], ...SKILL_BUTTON);
 	},
 
 

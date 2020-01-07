@@ -1,26 +1,20 @@
 var DEMON = {
-  in:false,
-  maison: null,
-  timer:0*0*0,
-  experience: 25,
-  attaque: 0,
-  capacite_attaque : {
-    attaqueun:0,
-    attaquedeux:0,
-  },
+  house: null,
+  timer: 0 * 0 * 0,
+  xp: 25,
+  attack: 0,
   defense: 0,
-  capacite_defense: {
-    defenseun:0,
-    defensedeux:0,
-
-    zombiresistanceun:0,
-    zombiresistancedeux:0,
+  skills: {
+    attack_one: 0,
+    attack_two: 0,
+    defense_one: 0,
+    defense_two: 0,
+    resistance_one: 0,
+    resistance_two: 0,
+    possesion_one: 0,
+    possesion_two: 0,
   },
   possesion: 0,
-  capacite_possesion: {
-    possessionun:0,
-    possessiondeux:0,
-  },
-  possede: 0,
-  tue: 0,
+  possessed: 0,
+  killed: 0,
 }

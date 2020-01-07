@@ -1,7 +1,7 @@
 var loadKells_SD;
 
 var VARHOUSE1 = {
-  occupant: MAISON1.OCCUPANT,
+  occupant: MAISON1.PEOPLE,
   couleurs: COLORS.BEIGE,
   timer_debut: 0*0*0,
   dead: 0,
@@ -9,7 +9,7 @@ var VARHOUSE1 = {
 }
 
 var VARHOUSE2 = {
-  occupant: MAISON2.OCCUPANT,
+  occupant: MAISON2.PEOPLE,
   couleurs: COLORS.BEIGE,
   timer_debut: 0*0*0,
   dead: 0,
@@ -17,7 +17,7 @@ var VARHOUSE2 = {
 }
 
 var VARHOUSE3 = {
-  occupant: MAISON3.OCCUPANT,
+  occupant: MAISON3.PEOPLE,
   couleurs: COLORS.BEIGE,
   timer_debut: 0*0*0,
   dead: 0,
@@ -25,7 +25,7 @@ var VARHOUSE3 = {
 }
 
 var VARHOUSE4 = {
-  occupant: MAISON4.OCCUPANT,
+  occupant: MAISON4.PEOPLE,
   couleurs: COLORS.BEIGE,
   timer_debut: 0*0*0,
   dead: 0,
@@ -33,7 +33,7 @@ var VARHOUSE4 = {
 }
 
 var VARHOUSE5 = {
-  occupant: MAISON5.OCCUPANT,
+  occupant: MAISON5.PEOPLE,
   couleurs: COLORS.BEIGE,
   timer_debut: 0*0*0,
   dead: 0,
@@ -41,7 +41,7 @@ var VARHOUSE5 = {
 }
 
 var VARHOUSE6 = {
-  occupant: MAISON6.OCCUPANT,
+  occupant: MAISON6.PEOPLE,
   couleurs: COLORS.BEIGE,
   timer_debut: 0*0*0,
   dead: 0,
@@ -49,7 +49,7 @@ var VARHOUSE6 = {
 }
 
 var VARHOUSE7 = {
-  occupant: MAISON7.OCCUPANT,
+  occupant: MAISON7.PEOPLE,
   couleurs: COLORS.BEIGE,
   timer_debut: 0*0*0,
   dead: 0,
@@ -57,7 +57,7 @@ var VARHOUSE7 = {
 }
 
 var VARHOUSE8 = {
-  occupant: MAISON8.OCCUPANT,
+  occupant: MAISON8.PEOPLE,
   couleurs: COLORS.BEIGE,
   timer_debut: 0*0*0,
   dead: 0,
@@ -65,7 +65,7 @@ var VARHOUSE8 = {
 }
 
 var VARHOUSE9 = {
-  occupant: MAISON9.OCCUPANT,
+  occupant: MAISON9.PEOPLE,
   couleurs: COLORS.BEIGE,
   timer_debut: 0*0*0,
   dead: 0,
