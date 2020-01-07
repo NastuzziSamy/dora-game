@@ -27,20 +27,20 @@ const GAME_SCREEN_WORLD = {
 			if (xp>PALIER_EXPERIENCE_DEMON){
 				DEMON.experience +=1;
 			}
-			if (xp>PALIER_EXPERIENCE_DEMON && xp <20){
-				GAME_SCREEN.drawCompetencePlus1();
+			if (xp>PALIER_EXPERIENCE_DEMON || xp<100){
+				GAME_SCREEN.drawInformation("Vous venez de gagner un point d'experience ");
 			}
 		}
 	},
 
 
 
-	drawCompetencePlus1: () => {
-			fill(...COLORS.GREYTRANSPARENT2)
-			rect(400, BAR_HEIGHT + 60, 250,20)
+	drawInformation: (texte) => {
+			stroke(...COLORS.GREYTRANSPARENT2);
 			fill(...COLORS.WHITE);
-			textSize(20);
-			text("Vous venez de gagner un point d'experience ", 405 , BAR_HEIGHT);
+			textAlign(CENTER);
+			textSize(26);
+			text(texte, 560 , 110);
 	},
 
 
@@ -109,6 +109,103 @@ const GAME_SCREEN_WORLD = {
 				fill(...COLORS.WHITE);
 				textSize(20);
 				text("Croyant :" + MAISON1.CROYANT + "%",640,BAR_HEIGHT + 60+ 100);
+
+			}
+
+			if (mouseInRect(...HOUSE2)){
+				fill(...COLORS.GREYTRANSPARENT2)
+				rect(400, BAR_HEIGHT + 60, 250,150)
+				fill(...COLORS.WHITE);
+				textSize(20);
+				text("Nombre d'occupant :" + MAISON2.OCCUPANT, 640 , BAR_HEIGHT + 60+50);
+				fill(...COLORS.WHITE);
+				textSize(20);
+				text("Croyant :" + MAISON2.CROYANT + "%",640,BAR_HEIGHT + 60+ 100);
+
+			}
+
+			if (mouseInRect(...HOUSE3)){
+				fill(...COLORS.GREYTRANSPARENT2)
+				rect(400, BAR_HEIGHT + 60, 250,150)
+				fill(...COLORS.WHITE);
+				textSize(20);
+				text("Nombre d'occupant :" + MAISON3.OCCUPANT, 640 , BAR_HEIGHT + 60+50);
+				fill(...COLORS.WHITE);
+				textSize(20);
+				text("Croyant :" + MAISON3.CROYANT + "%",640,BAR_HEIGHT + 60+ 100);
+
+			}
+
+			if (mouseInRect(...HOUSE4)){
+				fill(...COLORS.GREYTRANSPARENT2)
+				rect(400, BAR_HEIGHT + 60, 250,150)
+				fill(...COLORS.WHITE);
+				textSize(20);
+				text("Nombre d'occupant :" + MAISON4.OCCUPANT, 640 , BAR_HEIGHT + 60+50);
+				fill(...COLORS.WHITE);
+				textSize(20);
+				text("Croyant :" + MAISON4.CROYANT + "%",640,BAR_HEIGHT + 60+ 100);
+
+			}
+
+			if (mouseInRect(...HOUSE5)){
+				fill(...COLORS.GREYTRANSPARENT2)
+				rect(400, BAR_HEIGHT + 60, 250,150)
+				fill(...COLORS.WHITE);
+				textSize(20);
+				text("Nombre d'occupant :" + MAISON5.OCCUPANT, 640 , BAR_HEIGHT + 60+50);
+				fill(...COLORS.WHITE);
+				textSize(20);
+				text("Croyant :" + MAISON5.CROYANT + "%",640,BAR_HEIGHT + 60+ 100);
+
+			}
+
+			if (mouseInRect(...HOUSE6)){
+				fill(...COLORS.GREYTRANSPARENT2)
+				rect(400, BAR_HEIGHT + 60, 250,150)
+				fill(...COLORS.WHITE);
+				textSize(20);
+				text("Nombre d'occupant :" + MAISON6.OCCUPANT, 640 , BAR_HEIGHT + 60+50);
+				fill(...COLORS.WHITE);
+				textSize(20);
+				text("Croyant :" + MAISON6.CROYANT + "%",640,BAR_HEIGHT + 60+ 100);
+
+			}
+
+			if (mouseInRect(...HOUSE7)){
+				fill(...COLORS.GREYTRANSPARENT2)
+				rect(400, BAR_HEIGHT + 60, 250,150)
+				fill(...COLORS.WHITE);
+				textSize(20);
+				text("Nombre d'occupant :" + MAISON7.OCCUPANT, 640 , BAR_HEIGHT + 60+50);
+				fill(...COLORS.WHITE);
+				textSize(20);
+				text("Croyant :" + MAISON7.CROYANT + "%",640,BAR_HEIGHT + 60+ 100);
+
+			}
+
+			if (mouseInRect(...HOUSE8)){
+				fill(...COLORS.GREYTRANSPARENT2)
+				rect(400, BAR_HEIGHT + 60, 250,150)
+				fill(...COLORS.WHITE);
+				textSize(20);
+				text("Nombre d'occupant :" + MAISON8.OCCUPANT, 640 , BAR_HEIGHT + 60+50);
+				fill(...COLORS.WHITE);
+				textSize(20);
+				text("Croyant :" + MAISON8.CROYANT + "%",640,BAR_HEIGHT + 60+ 100);
+
+			}
+
+			if (mouseInRect(...HOUSE9)){
+				fill(...COLORS.GREYTRANSPARENT2)
+				rect(400, BAR_HEIGHT + 60, 250,150)
+				fill(...COLORS.WHITE);
+				textSize(20);
+				text("Nombre d'occupant :" + MAISON9.OCCUPANT, 640 , BAR_HEIGHT + 60+50);
+				fill(...COLORS.WHITE);
+				textSize(20);
+				text("Croyant :" + MAISON9.CROYANT + "%",640,BAR_HEIGHT + 60+ 100);
+
 			}
 	},
 

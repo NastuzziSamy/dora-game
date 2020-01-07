@@ -71,3 +71,8 @@ var VARHOUSE9 = {
   dead: 0,
   infected: 0,
 }
+
+var SOURIS = {
+  x: 0,
+  y: 0,
+}

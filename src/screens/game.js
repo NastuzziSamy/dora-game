@@ -37,7 +37,9 @@ const GAME_SCREEN = Object.assign({
 			GAME_SCREEN.toggleSpeed();
 		} else if (mouseInRect(...COMPETENCE_BUTTON,  DIAMETER_PAUSE_BUTTON, DIAMETER_PAUSE_BUTTON, true)) {
 			Screens.setScreen(SCREEN_NAMES.COMPETENCE);
-		} else if (mouseInRect(...HOUSE1)) {
+		} else if (mouseInRect(...HOUSE1)  || mouseInRect(...HOUSE2) || mouseInRect(...HOUSE3) || mouseInRect(...HOUSE4) || mouseInRect(...HOUSE5) || mouseInRect(...HOUSE6) || mouseInRect(...HOUSE7) || mouseInRect(...HOUSE8) || mouseInRect(...HOUSE9)) {
+		SOURIS.x= mouseX;
+		SOURIS.y=mouseY;
 		Screens.setScreen(SCREEN_NAMES.ACTION);
 	}
 	},
