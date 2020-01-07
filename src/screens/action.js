@@ -30,6 +30,7 @@ const ACTION_SCREEN = {
      VARHOUSE1.timer_debut=GAME_SCREEN.timer;
      VARHOUSE1.couleurs=COLORS.RED;
      toggleStart(VARHOUSE1);
+     GAME_SCREEN.stats.infected += VARHOUSE1.occupant;
      Screens.setScreen(SCREEN_NAMES.GAME);
 
    }  else if (mouseInRect(...ATTACK_BUTTON) && MAISON_ACTUELLE === HOUSE2){
@@ -40,6 +41,7 @@ const ACTION_SCREEN = {
      VARHOUSE2.timer_debut=GAME_SCREEN.timer;
      VARHOUSE2.couleurs=COLORS.RED;
      toggleStart(VARHOUSE2);
+     GAME_SCREEN.stats.infected += VARHOUSE2.occupant;
      Screens.setScreen(SCREEN_NAMES.GAME);
 
  } else if (mouseInRect(...ATTACK_BUTTON) && MAISON_ACTUELLE === HOUSE3){
@@ -50,6 +52,7 @@ const ACTION_SCREEN = {
    VARHOUSE3.timer_debut=GAME_SCREEN.timer;
    VARHOUSE3.couleurs=COLORS.RED;
    toggleStart(VARHOUSE3);
+     GAME_SCREEN.stats.infected += VARHOUSE3.occupant;
    Screens.setScreen(SCREEN_NAMES.GAME);
 
 } else if (mouseInRect(...ATTACK_BUTTON) && MAISON_ACTUELLE === HOUSE4){
@@ -60,7 +63,8 @@ const ACTION_SCREEN = {
   VARHOUSE4.timer_debut=GAME_SCREEN.timer;
   VARHOUSE4.couleurs=COLORS.RED;
   toggleStart(VARHOUSE4);
-  Screens.setScreen(SCREEN_NAMES.GAME);
+     GAME_SCREEN.stats.infected += VARHOUSE4.occupant;
+     Screens.setScreen(SCREEN_NAMES.GAME);
 
 }else if (mouseInRect(...ATTACK_BUTTON) && MAISON_ACTUELLE === HOUSE5){
 
@@ -70,7 +74,8 @@ const ACTION_SCREEN = {
   VARHOUSE5.timer_debut=GAME_SCREEN.timer;
   VARHOUSE5.couleurs=COLORS.RED;
   toggleStart(VARHOUSE5);
-  Screens.setScreen(SCREEN_NAMES.GAME);
+     GAME_SCREEN.stats.infected += VARHOUSE5.occupant;
+     Screens.setScreen(SCREEN_NAMES.GAME);
 
 }else if (mouseInRect(...ATTACK_BUTTON) && MAISON_ACTUELLE === HOUSE6){
 
@@ -80,6 +85,7 @@ const ACTION_SCREEN = {
   VARHOUSE6.timer_debut=GAME_SCREEN.timer;
   VARHOUSE6.couleurs=COLORS.RED;
   toggleStart(VARHOUSE6);
+     GAME_SCREEN.stats.infected += VARHOUSE6.occupant;
   Screens.setScreen(SCREEN_NAMES.GAME);
 
 }else if (mouseInRect(...ATTACK_BUTTON) && MAISON_ACTUELLE === HOUSE7){
@@ -90,7 +96,8 @@ const ACTION_SCREEN = {
   VARHOUSE7.timer_debut=GAME_SCREEN.timer;
   VARHOUSE7.couleurs=COLORS.RED;
   toggleStart(VARHOUSE7);
-  Screens.setScreen(SCREEN_NAMES.GAME);
+     GAME_SCREEN.stats.infected += VARHOUSE7.occupant;
+     Screens.setScreen(SCREEN_NAMES.GAME);
 
 }else if (mouseInRect(...ATTACK_BUTTON) && MAISON_ACTUELLE === HOUSE8){
 
@@ -99,7 +106,8 @@ const ACTION_SCREEN = {
   DEMON.in=true;
   VARHOUSE8.timer_debut=GAME_SCREEN.timer;
   VARHOUSE8.couleurs=COLORS.RED;
-  toggleStart(VARHOUSE8);
+     GAME_SCREEN.stats.infected += VARHOUSE8.occupant;
+     toggleStart(VARHOUSE8);
   Screens.setScreen(SCREEN_NAMES.GAME);
 
 }else if (mouseInRect(...ATTACK_BUTTON) && MAISON_ACTUELLE === HOUSE9){
@@ -109,7 +117,8 @@ const ACTION_SCREEN = {
   DEMON.in=true;
   VARHOUSE9.timer_debut=GAME_SCREEN.timer;
   VARHOUSE9.couleurs=COLORS.RED;
-  toggleStart(VARHOUSE9);
+     GAME_SCREEN.stats.infected += VARHOUSE9.occupant;
+     toggleStart(VARHOUSE9);
   Screens.setScreen(SCREEN_NAMES.GAME);
 }
 },

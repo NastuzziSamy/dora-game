@@ -47,7 +47,7 @@ const GAME_SCREEN_BAR = {
 		noStroke();
 		textSize(22);
 		textAlign(RIGHT, CENTER);
-		text(alive + '% sains 👨   ' + DEMON.timer, BAR_WIDTH - 10, BAR_CENTER_HEIGHT);
+		text(alive + '% sains 👨', BAR_WIDTH - 10, BAR_CENTER_HEIGHT);
 	},
 
 	drawTimer: () => {
