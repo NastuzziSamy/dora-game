@@ -15,19 +15,11 @@ const GAME_SCREEN_WORLD = {
 			if (xp > DEMON.xp_step){
 				DEMON.xp++;
 			}
-<<<<<<< HEAD
-			if (xp>PALIER_EXPERIENCE_DEMON || xp<70){
-				GAME_SCREEN.drawInformation("Vous venez de gagner un point d'experience ");
-=======
-
 			if (xp > DEMON.xp_step || xp < 100){
 				GAME_SCREEN.drawInformation("Vous venez de gagner un point d'expérience ");
->>>>>>> 537c1e0806f9f12fa689d542702ca503d50636c7
 			}
-			if (DEMON.possesion>0)
-				let 
-		}
-	},
+	}
+},
 
 	drawInformation: (texte) => {
 		stroke(...COLORS.GREYTRANSPARENT2);

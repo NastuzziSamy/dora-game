@@ -1,7 +1,6 @@
 /**
 * Défini l'affichage de l'arbre des compétences .
 */
-const IMAGE_DEMON = ['logo/demon.png'];
 const DIAMETER_EXIT_BUTTON = 20;
 
 const EXIT_BUTTON = [SCREEN_HEIGHT/2 - 250, 550,];
