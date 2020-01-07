@@ -16,14 +16,16 @@ const GAME_SCREEN = Object.assign({
 	paused: false,
 	speed: 0,
 	stats: {
-		total: MAISON1.OCCUPANT + MAISON2.OCCUPANT+MAISON3.OCCUPANT+MAISON4.OCCUPANT+MAISON5.OCCUPANT+MAISON6.OCCUPANT+MAISON7.OCCUPANT+MAISON8.OCCUPANT+MAISON9.OCCUPANT,
-		dead: 0,
+		total: 0,
+		alive: 0,
 		infected: 0,
+		dead: 0,
 		search: 0,
 	},
 
 	init: () => {
 		GAME_SCREEN.startTimer();
+		GAME_SCREEN.loadStats();
 	},
 
 	exit: () => {
@@ -35,8 +37,8 @@ const GAME_SCREEN = Object.assign({
 			GAME_SCREEN.togglePause();
 		} else if (mouseInRect(...QUICK_BUTTON, DIAMETER_PAUSE_BUTTON, DIAMETER_PAUSE_BUTTON, true)) {
 			GAME_SCREEN.toggleSpeed();
-		} else if (mouseInRect(...COMPETENCE_BUTTON,  DIAMETER_PAUSE_BUTTON, DIAMETER_PAUSE_BUTTON, true)) {
-			Screens.setScreen(SCREEN_NAMES.COMPETENCE);
+		} else if (mouseInRect(...SKILL_BUTTON,  DIAMETER_PAUSE_BUTTON, DIAMETER_PAUSE_BUTTON, true)) {
+			Screens.setScreen(SCREEN_NAMES.SKILL);
 		} else if (mouseInRect(...HOUSE1)) {
 		MAISON_ACTUELLE=HOUSE1;
 		Screens.setScreen(SCREEN_NAMES.ACTION);
@@ -71,8 +73,18 @@ const GAME_SCREEN = Object.assign({
 		fill(...COLORS.YELLOW);
 		rect(-1, -1, BAR_WIDTH + 2, BAR_HEIGHT + 2);
 
+		GAME_SCREEN.loadStats();
 		GAME_SCREEN.drawBar();
 		GAME_SCREEN.drawWorld();
+	},
+
+	loadStats: () => {
+		GAME_SCREEN.stats = Object.assign(GAME_SCREEN.stats, {
+			total: HOUSES.reduce((acc, house) => acc + house.alive + house.infected + house.dead, 0),
+			alive: HOUSES.reduce((acc, house) => acc + house.alive, 0),
+			infected: HOUSES.reduce((acc, house) => acc + house.infected, 0),
+			dead: HOUSES.reduce((acc, house) => acc + house.dead, 0),
+		});
 	},
 
 	incrementDemonTimer: (seconds) => {
@@ -95,16 +107,16 @@ const GAME_SCREEN = Object.assign({
 
 	startTimer: () => {
 		GAME_SCREEN.timerInterval = setInterval(() => GAME_SCREEN.incrementTimer(), 100);
-		if (DEMON.in)
-		{
+
+		if (DEMON.house_in) {
 			DEMON.timerInterval= setInterval(() => GAME_SCREEN.incrementDemonTimer(), 100);
 		}
 	},
 
 	pauseTimer: () => {
 		clearInterval(GAME_SCREEN.timerInterval);
-		if (DEMON.in)
-		{
+		
+		if (DEMON.house_in) {
 			clearInterval(DEMON.timerInterval);
 		}
 	},

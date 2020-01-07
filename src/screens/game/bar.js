@@ -51,7 +51,8 @@ const GAME_SCREEN_BAR = {
 	},
 
 	drawTimer: () => {
-		const timer = Math.ceil(GAME_SCREEN.timer / 10); //retourne le plus petit entier supérieur ou égal au nombre donné.
+		//retourne le plus petit entier supérieur ou égal au nombre donné.
+		const timer = Math.ceil(GAME_SCREEN.timer / 10);
 		let sec = timer % 60;
 		let min = (timer - sec) / 60;
 

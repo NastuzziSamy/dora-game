@@ -1,6 +1,6 @@
 /**
-* Défini l'affichage des actions .
-*/
+ * Défini l'affichage des actions .
+ */
 
 const QUIT_BUTTON = [1000,535 ,];
 const ATTACK_BUTTON = [450, 500, 360, 70];

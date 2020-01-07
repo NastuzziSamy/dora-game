@@ -1,0 +1,21 @@
+var DEMON = {
+  house_in: null,
+  timer: 0 * 0 * 0,
+  xp: 25,
+  xp_step: 800,
+  attack: 0,
+  defense: 0,
+  skills: {
+    attack_one: 0,
+    attack_two: 0,
+    defense_one: 0,
+    defense_two: 0,
+    resistance_one: 0,
+    resistance_two: 0,
+    possesion_one: 0,
+    possesion_two: 0,
+  },
+  possesion: 0,
+  possessed: 0,
+  killed: 0,
+}
