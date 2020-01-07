@@ -62,8 +62,6 @@ const GAME_SCREEN_INTERFACE = {
 		SKILL_SCREEN.drawAttaque();
 		SKILL_SCREEN.drawPossession();
 		SKILL_SCREEN.drawDefense();
-		SKILL_SCREEN.drawExitButton();
-		SKILL_SCREEN.drawCharacter();
 	},
 
 drawAttaque: () => {
@@ -205,18 +203,5 @@ textSize(26);
 text(texte, 560 , 110);
 },
 
-drawCharacter: () => {
-	image(SKILL_SCREEN.image, 100,400, 180, 200);
-},
-
-drawExitButton: () => {
-	fill(...COLORS.GREYTRANSPARENT);
-  circle(...QUIT_BUTTON, 30);
-  fill(...COLORS.RED);
-  textAlign(CENTER, CENTER);
-  textFont("Arial");
-  textSize(22);
-  text(['X'], ...QUIT_BUTTON);
-},
 
 };
