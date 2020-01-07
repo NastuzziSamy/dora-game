@@ -117,15 +117,9 @@ fill(...BUTTON_POSSESSION.possession_one.color);
 textAlign(CENTER, CENTER);
 textFont("Arial");
 textSize(22);
-<<<<<<< HEAD
 text(['P'], ...BUTTON_POSSESSION.possession_one.position);
 if (mouseInRect(...BUTTON_POSSESSION.possession_one.position,DIAMETER_SKILL_BUTTON,DIAMETER_SKILL_BUTTON,true)){
 SKILL_SCREEN.drawInformationCompetence("Apprenez à posséder - "+ DEMON.skills.possession_one+"/"+BUTTON_POSSESSION.possession_one.xp);
-=======
-text(['P'], ...BUTTON_POSSESSION.POSSESSIONUN);
-if (mouseInRect(...BUTTON_POSSESSION.POSSESSIONUN,DIAMETER_SKILL_BUTTON,DIAMETER_SKILL_BUTTON,true)){
-SKILL_SCREEN.drawInformationCompetence("Apprenez à posséder - "+ DEMON.capacite_possession.possessionun+"/"+BUTTON_POSSESSION.npossessionun);
->>>>>>> c3a8f15d7d3e29ce500dfdaf6dfeadd065bed0cc
 }
 
 fill(...COLORS.WHITE_TRANSPARENT);
@@ -134,15 +128,9 @@ fill(...BUTTON_POSSESSION.possession_two.color);
 textAlign(CENTER, CENTER);
 textFont("Arial");
 textSize(22);
-<<<<<<< HEAD
 text(['P'], ...BUTTON_POSSESSION.possession_two.position);
 if (mouseInRect(...BUTTON_POSSESSION.possession_two.position,DIAMETER_SKILL_BUTTON,DIAMETER_SKILL_BUTTON,true)){
 SKILL_SCREEN.drawInformationCompetence("possession niveau supérieur - "+ DEMON.skills.possession_two +"/"+ BUTTON_POSSESSION.possession_two.xp);
-=======
-text(['P'], ...BUTTON_POSSESSION.POSSESSIONDEUX);
-if (mouseInRect(...BUTTON_POSSESSION.POSSESSIONDEUX,DIAMETER_SKILL_BUTTON,DIAMETER_SKILL_BUTTON,true)){
-SKILL_SCREEN.drawInformationCompetence("possession niveau supérieur - "+ DEMON.capacite_possession.possessiondeux +"/"+BUTTON_POSSESSION.npossessiondeux);
->>>>>>> c3a8f15d7d3e29ce500dfdaf6dfeadd065bed0cc
 }
 
 if (mouseInRect(...CANVAS_POSSESSION)){
