@@ -62,6 +62,8 @@ const GAME_SCREEN_INTERFACE = {
 		SKILL_SCREEN.drawAttaque();
 		SKILL_SCREEN.drawPossession();
 		SKILL_SCREEN.drawDefense();
+		SKILL_SCREEN.drawExitButton();
+		SKILL_SCREEN.drawCharacter();
 	},
 
 drawAttaque: () => {
@@ -74,25 +76,25 @@ text("ATTACK", 180 , 35);
 
 
 fill(...COLORS.WHITE_TRANSPARENT);
-circle(...BUTTON_ATTACK.ATTACKUN, DIAMETER_SKILL_BUTTON);
-fill(...BUTTON_ATTACK.attackun);
+circle(...BUTTON_ATTACK.attack_one.position, DIAMETER_SKILL_BUTTON);
+fill(...BUTTON_ATTACK.attack_one.color);
 textAlign(CENTER, CENTER);
 textFont("Arial");
 textSize(22);
-text(['A'], ...BUTTON_ATTACK.ATTACKUN);
-if (mouseInRect(...BUTTON_ATTACK.attackun,DIAMETER_SKILL_BUTTON,DIAMETER_SKILL_BUTTON,true)){
-SKILL_SCREEN.drawInformationCompetence("Attaque débutant - "+ DEMON.capacite_attack.attackun +"/"+BUTTON_ATTACK.attackun);
+text(['A'], ...BUTTON_ATTACK.attack_one.position);
+if (mouseInRect(...BUTTON_ATTACK.attack_one.position,DIAMETER_SKILL_BUTTON,DIAMETER_SKILL_BUTTON,true)){
+SKILL_SCREEN.drawInformationCompetence("Attaque débutant - "+ DEMON.skills.attack_one +"/"+BUTTON_ATTACK.attack_one.xp);
 }
 
 fill(...COLORS.WHITE_TRANSPARENT);
-circle(...BUTTON_ATTACK.ATTACKDEUX, DIAMETER_SKILL_BUTTON);
-fill(...BUTTON_ATTACK.attackdeux);
+circle(...BUTTON_ATTACK.attack_two.position, DIAMETER_SKILL_BUTTON);
+fill(...BUTTON_ATTACK.attack_two.color);
 textAlign(CENTER, CENTER);
 textFont("Arial");
 textSize(22);
-text(['A'], ...BUTTON_ATTACK.ATTACKDEUX);
-if (mouseInRect(...BUTTON_ATTACK.attackdeux,DIAMETER_SKILL_BUTTON,DIAMETER_SKILL_BUTTON,true)){
-SKILL_SCREEN.drawInformationCompetence("Attanquant confimé, il peut tuer - "+ DEMON.capacite_attack.attackdeux +"/"+BUTTON_ATTACK.attackdeux);
+text(['A'], ...BUTTON_ATTACK.attack_two.position);
+if (mouseInRect(...BUTTON_ATTACK.attack_two.position,DIAMETER_SKILL_BUTTON,DIAMETER_SKILL_BUTTON,true)){
+SKILL_SCREEN.drawInformationCompetence("Attanquant confimé, il peut tuer - "+ DEMON.skills.attack_two +"/"+BUTTON_ATTACK.attack_two.xp);
 }
 
 if (mouseInRect(...CANVAS_ATTACK)){
@@ -110,25 +112,25 @@ textFont(loadKells_SD);
 text("POSSESSION", 540 , 20);
 
 fill(...COLORS.WHITE_TRANSPARENT);
-circle(...BUTTON_POSSESSION.POSSESSIONUN, DIAMETER_SKILL_BUTTON);
-fill(...BUTTON_POSSESSION.possessionun);
+circle(...BUTTON_POSSESSION.possession_one.position, DIAMETER_SKILL_BUTTON);
+fill(...BUTTON_POSSESSION.possession_one.color);
 textAlign(CENTER, CENTER);
 textFont("Arial");
 textSize(22);
-text(['P'], ...BUTTON_POSSESSION.POSSESSIONUN);
-if (mouseInRect(...BUTTON_POSSESSION.POSSESSIONUN,DIAMETER_SKILL_BUTTON,DIAMETER_SKILL_BUTTON,true)){
-SKILL_SCREEN.drawInformationCompetence("Apprenez à posséder - "+ DEMON.capacite_possesion.possessionun+"/"+BUTTON_POSSESSION.npossessionun);
+text(['P'], ...BUTTON_POSSESSION.possession_one.position);
+if (mouseInRect(...BUTTON_POSSESSION.possession_one.position,DIAMETER_SKILL_BUTTON,DIAMETER_SKILL_BUTTON,true)){
+SKILL_SCREEN.drawInformationCompetence("Apprenez à posséder - "+ DEMON.skills.possession_one+"/"+BUTTON_POSSESSION.possession_one.xp);
 }
 
 fill(...COLORS.WHITE_TRANSPARENT);
-circle(...BUTTON_POSSESSION.POSSESSIONDEUX, DIAMETER_SKILL_BUTTON);
-fill(...BUTTON_POSSESSION.possessiondeux);
+circle(...BUTTON_POSSESSION.possession_two.position, DIAMETER_SKILL_BUTTON);
+fill(...BUTTON_POSSESSION.possession_two.color);
 textAlign(CENTER, CENTER);
 textFont("Arial");
 textSize(22);
-text(['P'], ...BUTTON_POSSESSION.POSSESSIONDEUX);
-if (mouseInRect(...BUTTON_POSSESSION.POSSESSIONDEUX,DIAMETER_SKILL_BUTTON,DIAMETER_SKILL_BUTTON,true)){
-SKILL_SCREEN.drawInformationCompetence("Possesion niveau supérieur - "+ DEMON.capacite_possesion.possessiondeux +"/"+BUTTON_POSSESSION.npossessiondeux);
+text(['P'], ...BUTTON_POSSESSION.possession_two.position);
+if (mouseInRect(...BUTTON_POSSESSION.possession_two.position,DIAMETER_SKILL_BUTTON,DIAMETER_SKILL_BUTTON,true)){
+SKILL_SCREEN.drawInformationCompetence("possession niveau supérieur - "+ DEMON.skills.possession_two +"/"+ BUTTON_POSSESSION.possession_two.xp);
 }
 
 if (mouseInRect(...CANVAS_POSSESSION)){
@@ -147,46 +149,46 @@ text("DEFENSE", 900 , 20);
 
 
 fill(...COLORS.WHITE_TRANSPARENT);
-circle(...BUTTON_DEFENSE.DEFENSEUN, DIAMETER_SKILL_BUTTON);
-fill(...BUTTON_DEFENSE.defenseun);
+circle(...BUTTON_DEFENSE.defense_one.position, DIAMETER_SKILL_BUTTON);
+fill(...BUTTON_DEFENSE.defense_one.color);
 textAlign(CENTER, CENTER);
 textFont("Arial");
 textSize(22);
-text(['D'], ...BUTTON_DEFENSE.DEFENSEUN);
-if (mouseInRect(...BUTTON_DEFENSE.DEFENSEUN,DIAMETER_SKILL_BUTTON,DIAMETER_SKILL_BUTTON,true)){
-SKILL_SCREEN.drawInformationCompetence("Défence niveau 1 - "+ DEMON.capacite_defense.defenseun +"/"+BUTTON_DEFENSE.ndefenseun);
+text(['D'], ...BUTTON_DEFENSE.defense_one.position);
+if (mouseInRect(...BUTTON_DEFENSE.defense_one.position,DIAMETER_SKILL_BUTTON,DIAMETER_SKILL_BUTTON,true)){
+SKILL_SCREEN.drawInformationCompetence("Défence niveau 1 - "+ DEMON.skills.defense_one +"/"+BUTTON_DEFENSE.defense_one.xp);
 }
 
 fill(...COLORS.WHITE_TRANSPARENT);
-circle(...BUTTON_DEFENSE.DEFENSEDEUX, DIAMETER_SKILL_BUTTON);
-fill(...BUTTON_DEFENSE.defensedeux);
+circle(...BUTTON_DEFENSE.defense_two.position, DIAMETER_SKILL_BUTTON);
+fill(...BUTTON_DEFENSE.defense_two.color);
 textAlign(CENTER, CENTER);
 textSize(22);
-text(['D'], ...BUTTON_DEFENSE.DEFENSEDEUX);
-if (mouseInRect(...BUTTON_DEFENSE.DEFENSEDEUX,DIAMETER_SKILL_BUTTON,DIAMETER_SKILL_BUTTON,true)){
-SKILL_SCREEN.drawInformationCompetence("Défence niveau 2 - "+ DEMON.capacite_defense.defensedeux +"/"+BUTTON_DEFENSE.ndefensedeux);
+text(['D'], ...BUTTON_DEFENSE.defense_two.position);
+if (mouseInRect(...BUTTON_DEFENSE.defense_two.position,DIAMETER_SKILL_BUTTON,DIAMETER_SKILL_BUTTON,true)){
+SKILL_SCREEN.drawInformationCompetence("Défence niveau 2 - "+ DEMON.skills.defense_two +"/"+BUTTON_DEFENSE.defense_two.xp);
 }
 
 
 
 fill(...COLORS.WHITE_TRANSPARENT);
-circle(...BUTTON_DEFENSE.ZOMBIRESISTANCEUN, DIAMETER_SKILL_BUTTON);
-fill(...BUTTON_DEFENSE.zombiresistanceun);
+circle(...BUTTON_DEFENSE.resistance_one.position, DIAMETER_SKILL_BUTTON);
+fill(...BUTTON_DEFENSE.resistance_one.color);
 textAlign(CENTER, CENTER);
 textSize(22);
-text(['D'], ...BUTTON_DEFENSE.ZOMBIRESISTANCEUN);
-if (mouseInRect(...BUTTON_DEFENSE.ZOMBIRESISTANCEUN,DIAMETER_SKILL_BUTTON,DIAMETER_SKILL_BUTTON,true)){
-SKILL_SCREEN.drawInformationCompetence("Les zombie sont plus résistant - "+ DEMON.capacite_defense.zombiresistanceun +"/"+BUTTON_DEFENSE.nzombiresistanceun);
+text(['D'], ...BUTTON_DEFENSE.resistance_one.position);
+if (mouseInRect(...BUTTON_DEFENSE.resistance_one.position,DIAMETER_SKILL_BUTTON,DIAMETER_SKILL_BUTTON,true)){
+SKILL_SCREEN.drawInformationCompetence("Les zombie sont plus résistant - "+ DEMON.skills.resistance_one +"/"+BUTTON_DEFENSE.resistance_one.xp);
 }
 
 fill(...COLORS.WHITE_TRANSPARENT);
-circle(...BUTTON_DEFENSE.ZOMBIRESISTANCEDEUX, DIAMETER_SKILL_BUTTON);
-fill(...BUTTON_DEFENSE.zombiresistancedeux);
+circle(...BUTTON_DEFENSE.resistance_two.position, DIAMETER_SKILL_BUTTON);
+fill(...BUTTON_DEFENSE.resistance_two.color);
 textAlign(CENTER, CENTER);
 textSize(22);
-text(['D'], ...BUTTON_DEFENSE.ZOMBIRESISTANCEDEUX);
-if (mouseInRect(...BUTTON_DEFENSE.ZOMBIRESISTANCEDEUX,DIAMETER_SKILL_BUTTON,DIAMETER_SKILL_BUTTON,true)){
-SKILL_SCREEN.drawInformationCompetence("Les zombie sont encore plus résistant - "+ DEMON.capacite_defense.zombiresistancedeux +"/"+BUTTON_DEFENSE.nzombiresistancedeux);
+text(['D'], ...BUTTON_DEFENSE.resistance_two.position);
+if (mouseInRect(...BUTTON_DEFENSE.resistance_two.position,DIAMETER_SKILL_BUTTON,DIAMETER_SKILL_BUTTON,true)){
+SKILL_SCREEN.drawInformationCompetence("Les zombie sont encore plus résistant - "+ DEMON.skills.resistance_two +"/"+BUTTON_DEFENSE.BUTTON_DEFENSE.resistance_two.xp);
 }
 
 if (mouseInRect(...CANVAS_DEFENSE)){
@@ -203,5 +205,18 @@ textSize(26);
 text(texte, 560 , 110);
 },
 
+drawCharacter: () => {
+	image(SKILL_SCREEN.image, 100,400, 180, 200);
+},
+
+drawExitButton: () => {
+	fill(...COLORS.GREYTRANSPARENT);
+  circle(...QUIT_BUTTON, 30);
+  fill(...COLORS.RED);
+  textAlign(CENTER, CENTER);
+  textFont("Arial");
+  textSize(22);
+  text(['X'], ...QUIT_BUTTON);
+},
 
 };
