@@ -37,11 +37,34 @@ const GAME_SCREEN = Object.assign({
 			GAME_SCREEN.toggleSpeed();
 		} else if (mouseInRect(...COMPETENCE_BUTTON,  DIAMETER_PAUSE_BUTTON, DIAMETER_PAUSE_BUTTON, true)) {
 			Screens.setScreen(SCREEN_NAMES.COMPETENCE);
-		} else if (mouseInRect(...HOUSE1)  || mouseInRect(...HOUSE2) || mouseInRect(...HOUSE3) || mouseInRect(...HOUSE4) || mouseInRect(...HOUSE5) || mouseInRect(...HOUSE6) || mouseInRect(...HOUSE7) || mouseInRect(...HOUSE8) || mouseInRect(...HOUSE9)) {
-		SOURIS.x= mouseX;
-		SOURIS.y=mouseY;
+		} else if (mouseInRect(...HOUSE1)) {
+		MAISON_ACTUELLE=HOUSE1;
 		Screens.setScreen(SCREEN_NAMES.ACTION);
-	}
+	}else if (mouseInRect(...HOUSE2)) {
+		MAISON_ACTUELLE=HOUSE2;
+		Screens.setScreen(SCREEN_NAMES.ACTION);
+	}else if (mouseInRect(...HOUSE3)) {
+		MAISON_ACTUELLE=HOUSE3;
+		Screens.setScreen(SCREEN_NAMES.ACTION);
+	}else if (mouseInRect(...HOUSE4)) {
+		MAISON_ACTUELLE=HOUSE4;
+		Screens.setScreen(SCREEN_NAMES.ACTION);
+	}else if (mouseInRect(...HOUSE5)) {
+		MAISON_ACTUELLE=HOUSE5;
+		Screens.setScreen(SCREEN_NAMES.ACTION);
+	}else if (mouseInRect(...HOUSE6)) {
+		MAISON_ACTUELLE=HOUSE6;
+		Screens.setScreen(SCREEN_NAMES.ACTION);
+	}else if (mouseInRect(...HOUSE7)) {
+		MAISON_ACTUELLE=HOUSE7;
+		Screens.setScreen(SCREEN_NAMES.ACTION);
+	}else if (mouseInRect(...HOUSE8)) {
+		MAISON_ACTUELLE=HOUSE8;
+		Screens.setScreen(SCREEN_NAMES.ACTION);
+	}else if (mouseInRect(...HOUSE9)) {
+		MAISON_ACTUELLE=HOUSE9;
+		Screens.setScreen(SCREEN_NAMES.ACTION);
+		}
 	},
 
 	draw: () => {

@@ -76,3 +76,5 @@ var SOURIS = {
   x: 0,
   y: 0,
 }
+
+var MAISON_ACTUELLE = NULL;

@@ -10,6 +10,7 @@ const BRUME_ECRAN = [0,0,SCREEN_WIDTH, SCREEN_HEIGHT-BAR_HEIGHT];
 const ACTION_SCREEN = {
  name: SCREEN_NAMES.ACTION,
 
+
  init: () => {
 
  },
@@ -21,7 +22,7 @@ const ACTION_SCREEN = {
  mousePressed: () => {
    if (mouseInRect(...QUIT_BUTTON, DIAMETER_PAUSE_BUTTON, DIAMETER_PAUSE_BUTTON, true)) {
      Screens.setScreen(SCREEN_NAMES.GAME);
-   } else if (mouseInRect(...ATTACK_BUTTON)){
+   } else if (mouseInRect(...ATTACK_BUTTON) && MAISON_ACTUELLE === HOUSE1){
 
      DEMON.maison=HOUSE1;
      DEMON.debut=GAME_SCREEN.timer;
@@ -30,8 +31,88 @@ const ACTION_SCREEN = {
      VARHOUSE1.couleurs=COLORS.RED;
      toggleStart(VARHOUSE1);
      Screens.setScreen(SCREEN_NAMES.GAME);
-   }
- },
+
+   }  else if (mouseInRect(...ATTACK_BUTTON) && MAISON_ACTUELLE === HOUSE2){
+
+     DEMON.maison=HOUSE2;
+     DEMON.debut=GAME_SCREEN.timer;
+     DEMON.in=true;
+     VARHOUSE2.timer_debut=GAME_SCREEN.timer;
+     VARHOUSE2.couleurs=COLORS.RED;
+     toggleStart(VARHOUSE2);
+     Screens.setScreen(SCREEN_NAMES.GAME);
+
+ } else if (mouseInRect(...ATTACK_BUTTON) && MAISON_ACTUELLE === HOUSE3){
+
+   DEMON.maison=HOUSE3;
+   DEMON.debut=GAME_SCREEN.timer;
+   DEMON.in=true;
+   VARHOUSE3.timer_debut=GAME_SCREEN.timer;
+   VARHOUSE3.couleurs=COLORS.RED;
+   toggleStart(VARHOUSE3);
+   Screens.setScreen(SCREEN_NAMES.GAME);
+
+} else if (mouseInRect(...ATTACK_BUTTON) && MAISON_ACTUELLE === HOUSE4){
+
+  DEMON.maison=HOUSE4;
+  DEMON.debut=GAME_SCREEN.timer;
+  DEMON.in=true;
+  VARHOUSE4.timer_debut=GAME_SCREEN.timer;
+  VARHOUSE4.couleurs=COLORS.RED;
+  toggleStart(VARHOUSE4);
+  Screens.setScreen(SCREEN_NAMES.GAME);
+
+}else if (mouseInRect(...ATTACK_BUTTON) && MAISON_ACTUELLE === HOUSE5){
+
+  DEMON.maison=HOUSE5;
+  DEMON.debut=GAME_SCREEN.timer;
+  DEMON.in=true;
+  VARHOUSE5.timer_debut=GAME_SCREEN.timer;
+  VARHOUSE5.couleurs=COLORS.RED;
+  toggleStart(VARHOUSE5);
+  Screens.setScreen(SCREEN_NAMES.GAME);
+
+}else if (mouseInRect(...ATTACK_BUTTON) && MAISON_ACTUELLE === HOUSE6){
+
+  DEMON.maison=HOUSE6;
+  DEMON.debut=GAME_SCREEN.timer;
+  DEMON.in=true;
+  VARHOUSE6.timer_debut=GAME_SCREEN.timer;
+  VARHOUSE6.couleurs=COLORS.RED;
+  toggleStart(VARHOUSE6);
+  Screens.setScreen(SCREEN_NAMES.GAME);
+
+}else if (mouseInRect(...ATTACK_BUTTON) && MAISON_ACTUELLE === HOUSE7){
+
+  DEMON.maison=HOUSE7;
+  DEMON.debut=GAME_SCREEN.timer;
+  DEMON.in=true;
+  VARHOUSE7.timer_debut=GAME_SCREEN.timer;
+  VARHOUSE7.couleurs=COLORS.RED;
+  toggleStart(VARHOUSE7);
+  Screens.setScreen(SCREEN_NAMES.GAME);
+
+}else if (mouseInRect(...ATTACK_BUTTON) && MAISON_ACTUELLE === HOUSE8){
+
+  DEMON.maison=HOUSE8;
+  DEMON.debut=GAME_SCREEN.timer;
+  DEMON.in=true;
+  VARHOUSE8.timer_debut=GAME_SCREEN.timer;
+  VARHOUSE8.couleurs=COLORS.RED;
+  toggleStart(VARHOUSE8);
+  Screens.setScreen(SCREEN_NAMES.GAME);
+
+}else if (mouseInRect(...ATTACK_BUTTON) && MAISON_ACTUELLE === HOUSE9){
+
+  DEMON.maison=HOUSE9;
+  DEMON.debut=GAME_SCREEN.timer;
+  DEMON.in=true;
+  VARHOUSE9.timer_debut=GAME_SCREEN.timer;
+  VARHOUSE9.couleurs=COLORS.RED;
+  toggleStart(VARHOUSE9);
+  Screens.setScreen(SCREEN_NAMES.GAME);
+}
+},
 
 
  draw: () => {
