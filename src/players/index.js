@@ -1,7 +1,8 @@
 var DEMON = {
-  house: null,
+  house_in: null,
   timer: 0 * 0 * 0,
   xp: 25,
+  xp_step: 800,
   attack: 0,
   defense: 0,
   skills: {

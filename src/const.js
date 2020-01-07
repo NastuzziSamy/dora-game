@@ -3,7 +3,6 @@
  */
 const KELLS_SD = ['police/Kells_SD.ttf'];
 
-
 const [SCREEN_WIDTH, SCREEN_HEIGHT] = [1080, 600];
 const [SCREEN_CENTER_WIDTH, SCREEN_CENTER_HEIGHT] = [SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2];
 
@@ -18,57 +17,8 @@ const SCREEN_NAMES = {
 	ACTION: 'action',
 }
 
-
 const [BUTTON_WIDTH, BUTTON_HEIGHT] = [SCREEN_WIDTH / 1.5, 75];
 const BUTTON_CENTER_X = (SCREEN_WIDTH - BUTTON_WIDTH) / 2;
-
-const PALIER_EXPERIENCE_DEMON = 800;
-
-const MAISON1 = {
-	PEOPLE: 23,
-	CROYANT: 10,
-}
-
-const MAISON2 = {
-	PEOPLE: 67,
-	CROYANT: 40,
-}
-
-const MAISON3 = {
-	PEOPLE: 14,
-	CROYANT: 60,
-}
-
-const MAISON4 = {
-	PEOPLE: 31,
-	CROYANT: 20,
-}
-
-const MAISON5 = {
-	PEOPLE: 26,
-	CROYANT: 10,
-}
-
-const MAISON6 = {
-	PEOPLE: 20,
-	CROYANT: 10,
-}
-
-const MAISON7 = {
-	PEOPLE: 19,
-	CROYANT: 5,
-}
-
-const MAISON8 = {
-	PEOPLE: 43,
-	CROYANT: 25,
-}
-
-const MAISON9 = {
-	PEOPLE: 37,
-	CROYANT: 15,
-}
-
 
 const COLORS = {
 	BLUE: [10, 10, 255],

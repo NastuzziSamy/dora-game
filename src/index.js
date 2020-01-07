@@ -23,7 +23,3 @@ function draw() {
 function preload() {
 	loadKells_SD =loadFont(KELLS_SD) ;
 }
-
-function toggleStart(HOUSE) {
-
-}
