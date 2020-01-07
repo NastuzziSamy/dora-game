@@ -56,119 +56,41 @@ const GAME_SCREEN_WORLD = {
 	drawHouses: () => {
 		for (let i = 0; i < HOUSES.length; i++) {
 			let house = HOUSES[i];
+			let total = house.alive + house.infected + house.dead;
+			let ratio_alive = house.alive / total;
+			let ratio_infected = house.infected / total;
+			let ratio_dead = house.dead / total;
+			let divider = (ratio_alive > 0) + (ratio_infected > 0) + (ratio_dead > 0);
 
-			fill(...COLORS.BEIGE);
+			let color = [
+				((COLORS.BEIGE[0] * ratio_alive) + (COLORS.RED[0] * ratio_infected) + (COLORS.BLACK[0] * ratio_dead)) / divider,
+				((COLORS.BEIGE[1] * ratio_alive) + (COLORS.RED[1] * ratio_infected) + (COLORS.BLACK[1] * ratio_dead)) / divider,
+				((COLORS.BEIGE[2] * ratio_alive) + (COLORS.RED[2] * ratio_infected) + (COLORS.BLACK[2] * ratio_dead)) / divider,
+			];
+
+			fill(...color);
 			rect(...house.position);
 		}
 	},
 
 	drawInfo: () => {
-		if (mouseInRect(...HOUSE1)){
-			fill(...COLORS.GREYTRANSPARENT2)
-			rect(400, BAR_HEIGHT + 60, 250,150)
-			fill(...COLORS.WHITE);
-			textSize(20);
-			text("Nombre d'occupant :" + MAISON1.PEOPLE, 640 , BAR_HEIGHT + 60+50);
-			fill(...COLORS.WHITE);
-			textSize(20);
-			text("Croyant :" + MAISON1.PROTECTION + "%",640,BAR_HEIGHT + 60+ 100);
+		for (let i = 0; i < HOUSES.length; i++) {
+			let house = HOUSES[i];
 
-		}
+			if (mouseInRect(...house.position)) {
+				fill(...COLORS.GREYTRANSPARENT2)
+				rect(400, BAR_HEIGHT + 60, 250,150)
+				fill(...COLORS.WHITE);
+				textSize(20);
+				text("Vivants: " + house.alive, 640, BAR_HEIGHT + 60 + 25);
+				text("Infectés: " + house.infected, 640, BAR_HEIGHT + 60 + 50);
+				text("Morts: " + house.dead, 640, BAR_HEIGHT + 60 + 75);
+				fill(...COLORS.WHITE);
+				textSize(20);
+				text("Croyant: " + house.protection + "%", 640, BAR_HEIGHT + 60 + 100);
 
-		if (mouseInRect(...HOUSE2)){
-			fill(...COLORS.GREYTRANSPARENT2)
-			rect(400, BAR_HEIGHT + 60, 250,150)
-			fill(...COLORS.WHITE);
-			textSize(20);
-			text("Nombre d'occupant :" + MAISON2.PEOPLE, 640 , BAR_HEIGHT + 60+50);
-			fill(...COLORS.WHITE);
-			textSize(20);
-			text("Croyant :" + MAISON2.PROTECTION + "%",640,BAR_HEIGHT + 60+ 100);
-
-		}
-
-		if (mouseInRect(...HOUSE3)){
-			fill(...COLORS.GREYTRANSPARENT2)
-			rect(400, BAR_HEIGHT + 60, 250,150)
-			fill(...COLORS.WHITE);
-			textSize(20);
-			text("Nombre d'occupant :" + MAISON3.PEOPLE, 640 , BAR_HEIGHT + 60+50);
-			fill(...COLORS.WHITE);
-			textSize(20);
-			text("Croyant :" + MAISON3.PROTECTION + "%",640,BAR_HEIGHT + 60+ 100);
-
-		}
-
-		if (mouseInRect(...HOUSE4)){
-			fill(...COLORS.GREYTRANSPARENT2)
-			rect(400, BAR_HEIGHT + 60, 250,150)
-			fill(...COLORS.WHITE);
-			textSize(20);
-			text("Nombre d'occupant :" + MAISON4.PEOPLE, 640 , BAR_HEIGHT + 60+50);
-			fill(...COLORS.WHITE);
-			textSize(20);
-			text("Croyant :" + MAISON4.PROTECTION + "%",640,BAR_HEIGHT + 60+ 100);
-
-		}
-
-		if (mouseInRect(...HOUSE5)){
-			fill(...COLORS.GREYTRANSPARENT2)
-			rect(400, BAR_HEIGHT + 60, 250,150)
-			fill(...COLORS.WHITE);
-			textSize(20);
-			text("Nombre d'occupant :" + MAISON5.PEOPLE, 640 , BAR_HEIGHT + 60+50);
-			fill(...COLORS.WHITE);
-			textSize(20);
-			text("Croyant :" + MAISON5.PROTECTION + "%",640,BAR_HEIGHT + 60+ 100);
-
-		}
-
-		if (mouseInRect(...HOUSE6)){
-			fill(...COLORS.GREYTRANSPARENT2)
-			rect(400, BAR_HEIGHT + 60, 250,150)
-			fill(...COLORS.WHITE);
-			textSize(20);
-			text("Nombre d'occupant :" + MAISON6.PEOPLE, 640 , BAR_HEIGHT + 60+50);
-			fill(...COLORS.WHITE);
-			textSize(20);
-			text("Croyant :" + MAISON6.PROTECTION + "%",640,BAR_HEIGHT + 60+ 100);
-
-		}
-
-		if (mouseInRect(...HOUSE7)){
-			fill(...COLORS.GREYTRANSPARENT2)
-			rect(400, BAR_HEIGHT + 60, 250,150)
-			fill(...COLORS.WHITE);
-			textSize(20);
-			text("Nombre d'occupant :" + MAISON7.PEOPLE, 640 , BAR_HEIGHT + 60+50);
-			fill(...COLORS.WHITE);
-			textSize(20);
-			text("Croyant :" + MAISON7.PROTECTION + "%",640,BAR_HEIGHT + 60+ 100);
-
-		}
-
-		if (mouseInRect(...HOUSE8)){
-			fill(...COLORS.GREYTRANSPARENT2)
-			rect(400, BAR_HEIGHT + 60, 250,150)
-			fill(...COLORS.WHITE);
-			textSize(20);
-			text("Nombre d'occupant :" + MAISON8.PEOPLE, 640 , BAR_HEIGHT + 60+50);
-			fill(...COLORS.WHITE);
-			textSize(20);
-			text("Croyant :" + MAISON8.PROTECTION + "%",640,BAR_HEIGHT + 60+ 100);
-
-		}
-
-		if (mouseInRect(...HOUSE9)){
-			fill(...COLORS.GREYTRANSPARENT2)
-			rect(400, BAR_HEIGHT + 60, 250,150)
-			fill(...COLORS.WHITE);
-			textSize(20);
-			text("Nombre d'occupant :" + MAISON9.PEOPLE, 640 , BAR_HEIGHT + 60+50);
-			fill(...COLORS.WHITE);
-			textSize(20);
-			text("Croyant :" + MAISON9.PROTECTION + "%",640,BAR_HEIGHT + 60+ 100);
-
+				break;
+			}
 		}
 	},
 
