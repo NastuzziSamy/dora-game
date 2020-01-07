@@ -5,7 +5,7 @@ var HOUSES = [
 	{
 		id: 0,
 		position: [15, BAR_HEIGHT + 15, 200, 175],
-		alive: 23,
+		alive: 230,
 		infected: 0,
 		dead: 0,
 		protection: 10,
@@ -14,7 +14,7 @@ var HOUSES = [
 	{
 		id: 1,
 		position: [275, BAR_HEIGHT + 15, 215, 175],
-		alive: 67,
+		alive: 670,
 		infected: 0,
 		dead: 0,
 		protection: 40,
@@ -23,7 +23,7 @@ var HOUSES = [
 	{
 		id: 2,
 		position: [550, BAR_HEIGHT + 15, 175, 100],
-		alive: 14,
+		alive: 140,
 		infected: 0,
 		dead: 0,
 		protection: 60,
@@ -32,7 +32,7 @@ var HOUSES = [
 	{
 		id: 3,
 		position: [550, BAR_HEIGHT + 15 + 105, 175, 70],
-		alive: 31,
+		alive: 310,
 		infected: 0,
 		dead: 0,
 		protection: 20,
@@ -41,7 +41,7 @@ var HOUSES = [
 	{
 		id: 4,
 		position: [730, BAR_HEIGHT + 15, 110, 175],
-		alive: 26,
+		alive: 260,
 		infected: 0,
 		dead: 0,
 		protection: 10,
@@ -50,7 +50,7 @@ var HOUSES = [
 	{
 		id: 5,
 		position: [900, BAR_HEIGHT + 15, 165, 175],
-		alive: 43,
+		alive: 430,
 		infected: 0,
 		dead: 0,
 		protection: 35,
@@ -59,7 +59,7 @@ var HOUSES = [
 	{
 		id: 6,
 		position: [625, BAR_HEIGHT + 250, 390, 285],
-		alive: 94,
+		alive: 940,
 		infected: 0,
 		dead: 0,
 		protection: 70,
@@ -68,7 +68,7 @@ var HOUSES = [
 	{
 		id: 7,
 		position: [225, BAR_HEIGHT + 250, 340, 285],
-		alive: 62,
+		alive: 620,
 		infected: 0,
 		dead: 0,
 		protection: 20,
@@ -77,7 +77,7 @@ var HOUSES = [
 	{
 		id: 8,
 		position: [15, BAR_HEIGHT + 250, 150, 285],
-		alive: 13,
+		alive: 130,
 		infected: 0,
 		dead: 0,
 		protection: 80,

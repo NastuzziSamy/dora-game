@@ -16,8 +16,8 @@ var DEMON = {
     zombiresistanceun:0,
     zombiresistancedeux:0,
   },
-  possesion: 0,
-  capacite_possesion: {
+  possession: 0,
+  capacite_possession: {
     possessionun:0,
     possessiondeux:0,
   },
