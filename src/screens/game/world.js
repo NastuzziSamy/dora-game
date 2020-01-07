@@ -6,7 +6,9 @@ const GAME_SCREEN_WORLD = {
 	mousePressed: () => {
 		if (mouseInRect(...PAUSE_BUTTON, DIAMETER_PAUSE_BUTTON, DIAMETER_PAUSE_BUTTON, true)) {
 			GAME_SCREEN.togglePause();
-		} else if (mouseInRect(...QUICK_BUTTON, DIAMETER_PAUSE_BUTTON, DIAMETER_PAUSE_BUTTON, true)) {
+		} else if (mouseInRect(...SKILL_BUTTON, DIAMETER_SKILL_BUTTON,DIAMETER_SKILL_BUTTON,true)){
+			Screens.setScreen(SCREEN_NAMES.SKILL);
+		}else if (mouseInRect(...QUICK_BUTTON, DIAMETER_PAUSE_BUTTON, DIAMETER_PAUSE_BUTTON, true)) {
 			GAME_SCREEN.toggleSpeed();
 		} else {
 			for (let i = 0; i < HOUSES.length; i++) {
@@ -22,7 +24,7 @@ const GAME_SCREEN_WORLD = {
 			}
 		}
 	},
-	
+
 	drawWorld: () => {
 		GAME_SCREEN.drawRoad();
 		GAME_SCREEN.drawPersonnage();
