@@ -17,6 +17,8 @@ const SCREEN_NAMES = {
 	ACTION: 'action',
 }
 
+const ACTION_STEP = 5;
+
 const [BUTTON_WIDTH, BUTTON_HEIGHT] = [SCREEN_WIDTH / 1.5, 75];
 const BUTTON_CENTER_X = (SCREEN_WIDTH - BUTTON_WIDTH) / 2;
 

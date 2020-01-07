@@ -100,7 +100,7 @@ const GAME_SCREEN_INTERFACE = {
 	  textSize(22);
 	  text(['P'], ...BUTTON_POSSESSION.POSSESSIONUN);
 		if (mouseInRect(...BUTTON_POSSESSION.POSSESSIONUN,DIAMETER_COMPETENCE_BUTTON,DIAMETER_COMPETENCE_BUTTON,true)){
-			COMPETENCE_SCREEN.drawInformationCompetence("Apprenez à posséder - "+ DEMON.capacite_possesion.possessionun+"/"+BUTTON_POSSESSION.npossessionun);
+			COMPETENCE_SCREEN.drawInformationCompetence("Apprenez à posséder - "+ DEMON.capacite_possession.possessionun+"/"+BUTTON_POSSESSION.npossessionun);
 		}
 
 		fill(...COLORS.BLANC_TRANSPARENT);
@@ -111,7 +111,7 @@ const GAME_SCREEN_INTERFACE = {
 	  textSize(22);
 	  text(['P'], ...BUTTON_POSSESSION.POSSESSIONDEUX);
 		if (mouseInRect(...BUTTON_POSSESSION.POSSESSIONDEUX,DIAMETER_COMPETENCE_BUTTON,DIAMETER_COMPETENCE_BUTTON,true)){
-			COMPETENCE_SCREEN.drawInformationCompetence("Possesion niveau supérieur - "+ DEMON.capacite_possesion.possessiondeux +"/"+BUTTON_POSSESSION.npossessiondeux);
+			COMPETENCE_SCREEN.drawInformationCompetence("possession niveau supérieur - "+ DEMON.capacite_possession.possessiondeux +"/"+BUTTON_POSSESSION.npossessiondeux);
 		}
 
 		if (mouseInRect(...CANVAS_POSSESSION)){

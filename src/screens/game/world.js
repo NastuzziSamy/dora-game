@@ -3,6 +3,26 @@ const ROAD_BORDER = 4;
 const SKILL_BUTTON = [SCREEN_HEIGHT/2 - 250, SCREEN_WIDTH/2,];
 
 const GAME_SCREEN_WORLD = {
+	mousePressed: () => {
+		if (mouseInRect(...PAUSE_BUTTON, DIAMETER_PAUSE_BUTTON, DIAMETER_PAUSE_BUTTON, true)) {
+			GAME_SCREEN.togglePause();
+		} else if (mouseInRect(...QUICK_BUTTON, DIAMETER_PAUSE_BUTTON, DIAMETER_PAUSE_BUTTON, true)) {
+			GAME_SCREEN.toggleSpeed();
+		} else {
+			for (let i = 0; i < HOUSES.length; i++) {
+				let house = HOUSES[i];
+
+				if (mouseInRect(...house.position)) {
+					ACTION_SCREEN.current_house = house;
+
+					Screens.setScreen(SCREEN_NAMES.ACTION);
+
+					break;
+				}
+			}
+		}
+	},
+	
 	drawWorld: () => {
 		GAME_SCREEN.drawRoad();
 		GAME_SCREEN.drawPersonnage();
@@ -60,12 +80,11 @@ const GAME_SCREEN_WORLD = {
 			let ratio_alive = house.alive / total;
 			let ratio_infected = house.infected / total;
 			let ratio_dead = house.dead / total;
-			let divider = (ratio_alive > 0) + (ratio_infected > 0) + (ratio_dead > 0);
 
 			let color = [
-				((COLORS.BEIGE[0] * ratio_alive) + (COLORS.RED[0] * ratio_infected) + (COLORS.BLACK[0] * ratio_dead)) / divider,
-				((COLORS.BEIGE[1] * ratio_alive) + (COLORS.RED[1] * ratio_infected) + (COLORS.BLACK[1] * ratio_dead)) / divider,
-				((COLORS.BEIGE[2] * ratio_alive) + (COLORS.RED[2] * ratio_infected) + (COLORS.BLACK[2] * ratio_dead)) / divider,
+				((COLORS.BEIGE[0] * ratio_alive) + (COLORS.RED[0] * ratio_infected) + (COLORS.BLACK[0] * ratio_dead)),
+				((COLORS.BEIGE[1] * ratio_alive) + (COLORS.RED[1] * ratio_infected) + (COLORS.BLACK[1] * ratio_dead)),
+				((COLORS.BEIGE[2] * ratio_alive) + (COLORS.RED[2] * ratio_infected) + (COLORS.BLACK[2] * ratio_dead)),
 			];
 
 			fill(...color);

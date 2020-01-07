@@ -59,17 +59,17 @@ const SKILL_SCREEN = Object.assign({
 			DEMON.xp-=3;
 			DEMON.attack+=3;
 		}
-		else if (mouseInRect(...BUTTON_POSSESSION.POSSESSIONUN, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true) && DEMON.xp >= 1 &&  DEMON.capacite_possesion.possessionun<BUTTON_POSSESSION.npossessionun) {
+		else if (mouseInRect(...BUTTON_POSSESSION.POSSESSIONUN, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true) && DEMON.xp >= 1 &&  DEMON.capacite_possession.possessionun<BUTTON_POSSESSION.npossessionun) {
 			BUTTON_POSSESSION.possessionun=COLORS.BLUE_POSSESSION;
-			DEMON.capacite_possesion.possessionun+=1;
+			DEMON.capacite_possession.possessionun+=1;
 			DEMON.xp-=1;
-			DEMON.possesion+=1;
+			DEMON.possession+=1;
 		}
-		else if (mouseInRect(...BUTTON_POSSESSION.POSSESSIONDEUX, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true) && DEMON.xp >= 2 && DEMON.capacite_possesion.possessiondeux<BUTTON_POSSESSION.npossessiondeux && DEMON.capacite_possesion.possessionun>=2) {
+		else if (mouseInRect(...BUTTON_POSSESSION.POSSESSIONDEUX, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true) && DEMON.xp >= 2 && DEMON.capacite_possession.possessiondeux<BUTTON_POSSESSION.npossessiondeux && DEMON.capacite_possession.possessionun>=2) {
 			BUTTON_POSSESSION.possessiondeux=COLORS.BLUE_POSSESSION;
-			DEMON.capacite_possesion.possessiondeux+=1;
+			DEMON.capacite_possession.possessiondeux+=1;
 			DEMON.xp-=2;
-			DEMON.possesion+=2;
+			DEMON.possession+=2;
 		}
 	},
 

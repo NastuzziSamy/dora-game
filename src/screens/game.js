@@ -13,6 +13,7 @@ const GAME_SCREEN = Object.assign({
 
 	// Temps de base en 0.1 s.
 	timer: 12 * 60 * 10,
+	timer_last_step: 12 * 60,
 	paused: false,
 	speed: 0,
 	stats: {
@@ -30,43 +31,6 @@ const GAME_SCREEN = Object.assign({
 
 	exit: () => {
 		GAME_SCREEN.pauseTimer();
-	},
-
-	mousePressed: () => {
-		if (mouseInRect(...PAUSE_BUTTON, DIAMETER_PAUSE_BUTTON, DIAMETER_PAUSE_BUTTON, true)) {
-			GAME_SCREEN.togglePause();
-		} else if (mouseInRect(...QUICK_BUTTON, DIAMETER_PAUSE_BUTTON, DIAMETER_PAUSE_BUTTON, true)) {
-			GAME_SCREEN.toggleSpeed();
-		} else if (mouseInRect(...SKILL_BUTTON,  DIAMETER_PAUSE_BUTTON, DIAMETER_PAUSE_BUTTON, true)) {
-			Screens.setScreen(SCREEN_NAMES.SKILL);
-		} else if (mouseInRect(...HOUSE1)) {
-		MAISON_ACTUELLE=HOUSE1;
-		Screens.setScreen(SCREEN_NAMES.ACTION);
-	}else if (mouseInRect(...HOUSE2)) {
-		MAISON_ACTUELLE=HOUSE2;
-		Screens.setScreen(SCREEN_NAMES.ACTION);
-	}else if (mouseInRect(...HOUSE3)) {
-		MAISON_ACTUELLE=HOUSE3;
-		Screens.setScreen(SCREEN_NAMES.ACTION);
-	}else if (mouseInRect(...HOUSE4)) {
-		MAISON_ACTUELLE=HOUSE4;
-		Screens.setScreen(SCREEN_NAMES.ACTION);
-	}else if (mouseInRect(...HOUSE5)) {
-		MAISON_ACTUELLE=HOUSE5;
-		Screens.setScreen(SCREEN_NAMES.ACTION);
-	}else if (mouseInRect(...HOUSE6)) {
-		MAISON_ACTUELLE=HOUSE6;
-		Screens.setScreen(SCREEN_NAMES.ACTION);
-	}else if (mouseInRect(...HOUSE7)) {
-		MAISON_ACTUELLE=HOUSE7;
-		Screens.setScreen(SCREEN_NAMES.ACTION);
-	}else if (mouseInRect(...HOUSE8)) {
-		MAISON_ACTUELLE=HOUSE8;
-		Screens.setScreen(SCREEN_NAMES.ACTION);
-	}else if (mouseInRect(...HOUSE9)) {
-		MAISON_ACTUELLE=HOUSE9;
-		Screens.setScreen(SCREEN_NAMES.ACTION);
-		}
 	},
 
 	draw: () => {
@@ -87,14 +51,8 @@ const GAME_SCREEN = Object.assign({
 		});
 	},
 
-	incrementDemonTimer: (seconds) => {
-		if (seconds === undefined) {
-			seconds = SPEEDS[GAME_SCREEN.speed];
-		}
-
-		DEMON.timer = (DEMON.timer + seconds);
-
-
+	executeOneStep: () => {
+		ACTION_SCREEN.attack();
 	},
 
 	incrementTimer: (seconds) => {
@@ -103,22 +61,21 @@ const GAME_SCREEN = Object.assign({
 		}
 
 		GAME_SCREEN.timer = (GAME_SCREEN.timer + seconds) % (24 * 60 * 10);
+
+		let timer_diff = Math.floor(GAME_SCREEN.timer / ACTION_STEP) - GAME_SCREEN.timer_last_step;
+		GAME_SCREEN.timer_last_step += timer_diff;
+
+		for (let i = 0; i < timer_diff; i++) {
+			GAME_SCREEN.executeOneStep();
+		}
 	},
 
 	startTimer: () => {
 		GAME_SCREEN.timerInterval = setInterval(() => GAME_SCREEN.incrementTimer(), 100);
-
-		if (DEMON.house_in) {
-			DEMON.timerInterval= setInterval(() => GAME_SCREEN.incrementDemonTimer(), 100);
-		}
 	},
 
 	pauseTimer: () => {
 		clearInterval(GAME_SCREEN.timerInterval);
-		
-		if (DEMON.house_in) {
-			clearInterval(DEMON.timerInterval);
-		}
 	},
 
 	togglePause: () => {
@@ -134,6 +91,6 @@ const GAME_SCREEN = Object.assign({
 	toggleSpeed: () => {
 		GAME_SCREEN.speed = (GAME_SCREEN.speed + 1) % SPEEDS.length
 	}
-}, GAME_SCREEN_BAR, GAME_SCREEN_WORLD );
+}, GAME_SCREEN_BAR, GAME_SCREEN_WORLD);
 
 Screens.addScreen(GAME_SCREEN);

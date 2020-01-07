@@ -117,7 +117,7 @@ textFont("Arial");
 textSize(22);
 text(['P'], ...BUTTON_POSSESSION.POSSESSIONUN);
 if (mouseInRect(...BUTTON_POSSESSION.POSSESSIONUN,DIAMETER_SKILL_BUTTON,DIAMETER_SKILL_BUTTON,true)){
-SKILL_SCREEN.drawInformationCompetence("Apprenez à posséder - "+ DEMON.capacite_possesion.possessionun+"/"+BUTTON_POSSESSION.npossessionun);
+SKILL_SCREEN.drawInformationCompetence("Apprenez à posséder - "+ DEMON.capacite_possession.possessionun+"/"+BUTTON_POSSESSION.npossessionun);
 }
 
 fill(...COLORS.WHITE_TRANSPARENT);
@@ -128,7 +128,7 @@ textFont("Arial");
 textSize(22);
 text(['P'], ...BUTTON_POSSESSION.POSSESSIONDEUX);
 if (mouseInRect(...BUTTON_POSSESSION.POSSESSIONDEUX,DIAMETER_SKILL_BUTTON,DIAMETER_SKILL_BUTTON,true)){
-SKILL_SCREEN.drawInformationCompetence("Possesion niveau supérieur - "+ DEMON.capacite_possesion.possessiondeux +"/"+BUTTON_POSSESSION.npossessiondeux);
+SKILL_SCREEN.drawInformationCompetence("possession niveau supérieur - "+ DEMON.capacite_possession.possessiondeux +"/"+BUTTON_POSSESSION.npossessiondeux);
 }
 
 if (mouseInRect(...CANVAS_POSSESSION)){

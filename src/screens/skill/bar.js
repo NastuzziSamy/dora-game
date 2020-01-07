@@ -27,7 +27,7 @@ const GAME_SCREEN_BAR_SKILL = {
 		rect( 700, 510, 10 * DEMON.attack, 20);
 
 		fill(...COLORS.BLUE_POSSESSION);
-		rect( 700, 540, 10 * DEMON.possesion, 20);
+		rect( 700, 540, 10 * DEMON.possession, 20);
 
 		fill(...COLORS.GREEN_SHIELD);
 		rect( 700, 570, 10 * DEMON.defense, 20);
