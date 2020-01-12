@@ -92,7 +92,11 @@ const GAME_SCREEN = Object.assign({
 
 	toggleSpeed: () => {
 		GAME_SCREEN.speed = (GAME_SCREEN.speed + 1) % SPEEDS.length
-	}
+	},
+
+	incrementSearch: (search) => {
+		GAME_SCREEN.stats.search += search;
+	},
 }, GAME_SCREEN_BAR, GAME_SCREEN_WORLD);
 
 Screens.addScreen(GAME_SCREEN);

@@ -64,144 +64,144 @@ const GAME_SCREEN_INTERFACE = {
 		SKILL_SCREEN.drawDefense();
 	},
 
-drawAttaque: () => {
+	drawAttaque: () => {
 
-fill(...COLORS.RED_ATTACK);
-textSize(40);
-textAlign(CENTER);
-textFont(loadKells_SD);
-text("ATTACK", 180 , 35);
-
-
-fill(...COLORS.WHITE_TRANSPARENT);
-circle(...BUTTON_ATTACK.attack_one.position, DIAMETER_SKILL_BUTTON);
-fill(...BUTTON_ATTACK.attack_one.color);
-textAlign(CENTER, CENTER);
-textFont("Arial");
-textSize(22);
-text(['A'], ...BUTTON_ATTACK.attack_one.position);
-if (mouseInRect(...BUTTON_ATTACK.attack_one.position,DIAMETER_SKILL_BUTTON,DIAMETER_SKILL_BUTTON,true)){
-SKILL_SCREEN.drawInformationCompetence("Attaque débutant - "+ DEMON.skills.attack_one +"/"+BUTTON_ATTACK.attack_one.xp);
-}
-
-fill(...COLORS.WHITE_TRANSPARENT);
-circle(...BUTTON_ATTACK.attack_two.position, DIAMETER_SKILL_BUTTON);
-fill(...BUTTON_ATTACK.attack_two.color);
-textAlign(CENTER, CENTER);
-textFont("Arial");
-textSize(22);
-text(['A'], ...BUTTON_ATTACK.attack_two.position);
-if (mouseInRect(...BUTTON_ATTACK.attack_two.position,DIAMETER_SKILL_BUTTON,DIAMETER_SKILL_BUTTON,true)){
-SKILL_SCREEN.drawInformationCompetence("Attanquant confimé, il peut tuer - "+ DEMON.skills.attack_two +"/"+BUTTON_ATTACK.attack_two.xp);
-}
-
-if (mouseInRect(...CANVAS_ATTACK)){
-fill(...COLORS.WHITE_TRANSPARENT);
-rect(...CANVAS_ATTACK);
-}
-},
-
-drawPossession: () => {
-
-fill(...COLORS.BLUE_POSSESSION);
-textSize(40);
-textAlign(CENTER);
-textFont(loadKells_SD);
-text("POSSESSION", 540 , 20);
-
-fill(...COLORS.WHITE_TRANSPARENT);
-circle(...BUTTON_POSSESSION.possession_one.position, DIAMETER_SKILL_BUTTON);
-fill(...BUTTON_POSSESSION.possession_one.color);
-textAlign(CENTER, CENTER);
-textFont("Arial");
-textSize(22);
-text(['P'], ...BUTTON_POSSESSION.possession_one.position);
-if (mouseInRect(...BUTTON_POSSESSION.possession_one.position,DIAMETER_SKILL_BUTTON,DIAMETER_SKILL_BUTTON,true)){
-SKILL_SCREEN.drawInformationCompetence("Apprenez à posséder - "+ DEMON.skills.possession_one+"/"+BUTTON_POSSESSION.possession_one.xp);
-}
-
-fill(...COLORS.WHITE_TRANSPARENT);
-circle(...BUTTON_POSSESSION.possession_two.position, DIAMETER_SKILL_BUTTON);
-fill(...BUTTON_POSSESSION.possession_two.color);
-textAlign(CENTER, CENTER);
-textFont("Arial");
-textSize(22);
-text(['P'], ...BUTTON_POSSESSION.possession_two.position);
-if (mouseInRect(...BUTTON_POSSESSION.possession_two.position,DIAMETER_SKILL_BUTTON,DIAMETER_SKILL_BUTTON,true)){
-SKILL_SCREEN.drawInformationCompetence("possession niveau supérieur - "+ DEMON.skills.possession_two +"/"+ BUTTON_POSSESSION.possession_two.xp);
-}
-
-if (mouseInRect(...CANVAS_POSSESSION)){
-fill(...COLORS.WHITE_TRANSPARENT);
-rect(...CANVAS_POSSESSION);
-}
-},
-
-drawDefense: () => {
-
-fill(...COLORS.GREEN_SHIELD);
-textSize(40);
-textAlign(CENTER);
-textFont(loadKells_SD);
-text("DEFENSE", 900 , 20);
+		fill(...COLORS.RED_ATTACK);
+		textSize(40);
+		textAlign(CENTER);
+		textFont(loadKells_SD);
+		text("ATTACK", 180, 35);
 
 
-fill(...COLORS.WHITE_TRANSPARENT);
-circle(...BUTTON_DEFENSE.defense_one.position, DIAMETER_SKILL_BUTTON);
-fill(...BUTTON_DEFENSE.defense_one.color);
-textAlign(CENTER, CENTER);
-textFont("Arial");
-textSize(22);
-text(['D'], ...BUTTON_DEFENSE.defense_one.position);
-if (mouseInRect(...BUTTON_DEFENSE.defense_one.position,DIAMETER_SKILL_BUTTON,DIAMETER_SKILL_BUTTON,true)){
-SKILL_SCREEN.drawInformationCompetence("Défence niveau 1 - "+ DEMON.skills.defense_one +"/"+BUTTON_DEFENSE.defense_one.xp);
-}
+		fill(...COLORS.WHITE_TRANSPARENT);
+		circle(...BUTTON_ATTACK.attack_one.position, DIAMETER_SKILL_BUTTON);
+		fill(...BUTTON_ATTACK.attack_one.color);
+		textAlign(CENTER, CENTER);
+		textFont("Arial");
+		textSize(22);
+		text(['A'], ...BUTTON_ATTACK.attack_one.position);
+		if (mouseInRect(...BUTTON_ATTACK.attack_one.position, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true)) {
+			SKILL_SCREEN.drawInformationCompetence("Attaque débutant - " + DEMON.skills.attack_one + "/" + BUTTON_ATTACK.attack_one.xp);
+		}
 
-fill(...COLORS.WHITE_TRANSPARENT);
-circle(...BUTTON_DEFENSE.defense_two.position, DIAMETER_SKILL_BUTTON);
-fill(...BUTTON_DEFENSE.defense_two.color);
-textAlign(CENTER, CENTER);
-textSize(22);
-text(['D'], ...BUTTON_DEFENSE.defense_two.position);
-if (mouseInRect(...BUTTON_DEFENSE.defense_two.position,DIAMETER_SKILL_BUTTON,DIAMETER_SKILL_BUTTON,true)){
-SKILL_SCREEN.drawInformationCompetence("Défence niveau 2 - "+ DEMON.skills.defense_two +"/"+BUTTON_DEFENSE.defense_two.xp);
-}
+		fill(...COLORS.WHITE_TRANSPARENT);
+		circle(...BUTTON_ATTACK.attack_two.position, DIAMETER_SKILL_BUTTON);
+		fill(...BUTTON_ATTACK.attack_two.color);
+		textAlign(CENTER, CENTER);
+		textFont("Arial");
+		textSize(22);
+		text(['A'], ...BUTTON_ATTACK.attack_two.position);
+		if (mouseInRect(...BUTTON_ATTACK.attack_two.position, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true)) {
+			SKILL_SCREEN.drawInformationCompetence("Attanquant confimé, il peut tuer - " + DEMON.skills.attack_two + "/" + BUTTON_ATTACK.attack_two.xp);
+		}
+
+		if (mouseInRect(...CANVAS_ATTACK)) {
+			fill(...COLORS.WHITE_TRANSPARENT);
+			rect(...CANVAS_ATTACK);
+		}
+	},
+
+	drawPossession: () => {
+
+		fill(...COLORS.BLUE_POSSESSION);
+		textSize(40);
+		textAlign(CENTER);
+		textFont(loadKells_SD);
+		text("POSSESSION", 540, 20);
+
+		fill(...COLORS.WHITE_TRANSPARENT);
+		circle(...BUTTON_POSSESSION.possession_one.position, DIAMETER_SKILL_BUTTON);
+		fill(...BUTTON_POSSESSION.possession_one.color);
+		textAlign(CENTER, CENTER);
+		textFont("Arial");
+		textSize(22);
+		text(['P'], ...BUTTON_POSSESSION.possession_one.position);
+		if (mouseInRect(...BUTTON_POSSESSION.possession_one.position, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true)) {
+			SKILL_SCREEN.drawInformationCompetence("Apprenez à posséder - " + DEMON.skills.possession_one + "/" + BUTTON_POSSESSION.possession_one.xp);
+		}
+
+		fill(...COLORS.WHITE_TRANSPARENT);
+		circle(...BUTTON_POSSESSION.possession_two.position, DIAMETER_SKILL_BUTTON);
+		fill(...BUTTON_POSSESSION.possession_two.color);
+		textAlign(CENTER, CENTER);
+		textFont("Arial");
+		textSize(22);
+		text(['P'], ...BUTTON_POSSESSION.possession_two.position);
+		if (mouseInRect(...BUTTON_POSSESSION.possession_two.position, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true)) {
+			SKILL_SCREEN.drawInformationCompetence("possession niveau supérieur - " + DEMON.skills.possession_two + "/" + BUTTON_POSSESSION.possession_two.xp);
+		}
+
+		if (mouseInRect(...CANVAS_POSSESSION)) {
+			fill(...COLORS.WHITE_TRANSPARENT);
+			rect(...CANVAS_POSSESSION);
+		}
+	},
+
+	drawDefense: () => {
+
+		fill(...COLORS.GREEN_SHIELD);
+		textSize(40);
+		textAlign(CENTER);
+		textFont(loadKells_SD);
+		text("DEFENSE", 900, 20);
+
+
+		fill(...COLORS.WHITE_TRANSPARENT);
+		circle(...BUTTON_DEFENSE.defense_one.position, DIAMETER_SKILL_BUTTON);
+		fill(...BUTTON_DEFENSE.defense_one.color);
+		textAlign(CENTER, CENTER);
+		textFont("Arial");
+		textSize(22);
+		text(['D'], ...BUTTON_DEFENSE.defense_one.position);
+		if (mouseInRect(...BUTTON_DEFENSE.defense_one.position, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true)) {
+			SKILL_SCREEN.drawInformationCompetence("Défence niveau 1 - " + DEMON.skills.defense_one + "/" + BUTTON_DEFENSE.defense_one.xp);
+		}
+
+		fill(...COLORS.WHITE_TRANSPARENT);
+		circle(...BUTTON_DEFENSE.defense_two.position, DIAMETER_SKILL_BUTTON);
+		fill(...BUTTON_DEFENSE.defense_two.color);
+		textAlign(CENTER, CENTER);
+		textSize(22);
+		text(['D'], ...BUTTON_DEFENSE.defense_two.position);
+		if (mouseInRect(...BUTTON_DEFENSE.defense_two.position, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true)) {
+			SKILL_SCREEN.drawInformationCompetence("Défence niveau 2 - " + DEMON.skills.defense_two + "/" + BUTTON_DEFENSE.defense_two.xp);
+		}
 
 
 
-fill(...COLORS.WHITE_TRANSPARENT);
-circle(...BUTTON_DEFENSE.resistance_one.position, DIAMETER_SKILL_BUTTON);
-fill(...BUTTON_DEFENSE.resistance_one.color);
-textAlign(CENTER, CENTER);
-textSize(22);
-text(['D'], ...BUTTON_DEFENSE.resistance_one.position);
-if (mouseInRect(...BUTTON_DEFENSE.resistance_one.position,DIAMETER_SKILL_BUTTON,DIAMETER_SKILL_BUTTON,true)){
-SKILL_SCREEN.drawInformationCompetence("Les zombie sont plus résistant - "+ DEMON.skills.resistance_one +"/"+BUTTON_DEFENSE.resistance_one.xp);
-}
+		fill(...COLORS.WHITE_TRANSPARENT);
+		circle(...BUTTON_DEFENSE.resistance_one.position, DIAMETER_SKILL_BUTTON);
+		fill(...BUTTON_DEFENSE.resistance_one.color);
+		textAlign(CENTER, CENTER);
+		textSize(22);
+		text(['D'], ...BUTTON_DEFENSE.resistance_one.position);
+		if (mouseInRect(...BUTTON_DEFENSE.resistance_one.position, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true)) {
+			SKILL_SCREEN.drawInformationCompetence("Les zombie sont plus résistant - " + DEMON.skills.resistance_one + "/" + BUTTON_DEFENSE.resistance_one.xp);
+		}
 
-fill(...COLORS.WHITE_TRANSPARENT);
-circle(...BUTTON_DEFENSE.resistance_two.position, DIAMETER_SKILL_BUTTON);
-fill(...BUTTON_DEFENSE.resistance_two.color);
-textAlign(CENTER, CENTER);
-textSize(22);
-text(['D'], ...BUTTON_DEFENSE.resistance_two.position);
-if (mouseInRect(...BUTTON_DEFENSE.resistance_two.position,DIAMETER_SKILL_BUTTON,DIAMETER_SKILL_BUTTON,true)){
-SKILL_SCREEN.drawInformationCompetence("Les zombie sont encore plus résistant - "+ DEMON.skills.resistance_two +"/"+BUTTON_DEFENSE.BUTTON_DEFENSE.resistance_two.xp);
-}
+		fill(...COLORS.WHITE_TRANSPARENT);
+		circle(...BUTTON_DEFENSE.resistance_two.position, DIAMETER_SKILL_BUTTON);
+		fill(...BUTTON_DEFENSE.resistance_two.color);
+		textAlign(CENTER, CENTER);
+		textSize(22);
+		text(['D'], ...BUTTON_DEFENSE.resistance_two.position);
+		if (mouseInRect(...BUTTON_DEFENSE.resistance_two.position, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true)) {
+			SKILL_SCREEN.drawInformationCompetence("Les zombie sont encore plus résistant - " + DEMON.skills.resistance_two + "/" + BUTTON_DEFENSE.BUTTON_DEFENSE.resistance_two.xp);
+		}
 
-if (mouseInRect(...CANVAS_DEFENSE)){
-fill(...COLORS.WHITE_TRANSPARENT);
-rect(...CANVAS_DEFENSE);
-}
-},
+		if (mouseInRect(...CANVAS_DEFENSE)) {
+			fill(...COLORS.WHITE_TRANSPARENT);
+			rect(...CANVAS_DEFENSE);
+		}
+	},
 
-drawInformationCompetence: (texte) => {
-stroke(...COLORS.GREYTRANSPARENT2);
-fill(...COLORS.WHITE);
-textAlign(CENTER);
-textSize(26);
-text(texte, 560 , 110);
-},
+	drawInformationCompetence: (texte) => {
+		stroke(...COLORS.GREYTRANSPARENT2);
+		fill(...COLORS.WHITE);
+		textAlign(CENTER);
+		textSize(26);
+		text(texte, 560, 110);
+	},
 
 
 };

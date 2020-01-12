@@ -76,7 +76,7 @@ const ACTION_SCREEN = {
 	attack: () => {
 		if (ACTION_SCREEN.current_house) {
 			let house = ACTION_SCREEN.current_house;
-			let ratio_protection = (1 - house.protection);
+			let ratio_protection = (1 - house.protection - (GAME_SCREEN.stats.search / 100));
 
 			if (house.infected) {
 				let ratio_dead = DEMON.attack * ((Math.random() * 0.8) + 0.4) * ratio_protection;
@@ -89,20 +89,27 @@ const ACTION_SCREEN = {
 				}
 
 				house.dead += ratio_dead;
-				house.protection -= (ratio_dead / (house.alive + house.infected + house.dead)) * house.protection * 5;
+				ratio_protected = (ratio_dead / (house.alive + house.infected + house.dead)) * house.protection * 5;
+				house.protection -= ratio_protected;
+				
+				GAME_SCREEN.incrementSearch(ratio_protected * 25 * ((Math.random() * 0.7) + 0.6));
+			
+				DEMON.xp += ratio_dead * ((Math.random() * 0.6) + 0.8);
 			}
 
 			if (house.alive) {
 				let ratio_infected = DEMON.possession * ((Math.random() * 0.8) + 0.4) * ratio_protection;
 
 				if (ratio_infected > house.alive) {
-					ratio_alive = house.alive;
+					ratio_infected = house.alive;
 					house.alive = 0;
 				} else {
 					house.alive -= ratio_infected;
 				}
 
 				house.infected += ratio_infected;
+
+				DEMON.xp += ratio_infected * ((Math.random() * 0.7) + 0.6);
 			}
 		}
 	},

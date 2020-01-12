@@ -11,7 +11,7 @@ const GAME_SCREEN_BAR = {
 	},
 
 	drawDeath: () => {
-		const dead = Math.ceil(GAME_SCREEN.stats.dead * 100 / GAME_SCREEN.stats.total);
+		const dead = Math.floor(GAME_SCREEN.stats.dead * 100 / GAME_SCREEN.stats.total);
 
 		fill(...COLORS.GREY);
 		noStroke();
@@ -21,7 +21,7 @@ const GAME_SCREEN_BAR = {
 	},
 
 	drawInfected: () => {
-		const infected = Math.ceil(GAME_SCREEN.stats.infected * 100 / GAME_SCREEN.stats.total);
+		const infected = Math.floor(GAME_SCREEN.stats.infected * 100 / GAME_SCREEN.stats.total);
 
 		fill(...COLORS.GREY);
 		noStroke();
@@ -31,7 +31,7 @@ const GAME_SCREEN_BAR = {
 	},
 
 	drawResearch: () => {
-		const search = Math.ceil(GAME_SCREEN.stats.search);
+		const search = Math.floor(GAME_SCREEN.stats.search);
 
 		fill(...COLORS.GREY);
 		noStroke();
