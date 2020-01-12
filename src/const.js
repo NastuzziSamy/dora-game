@@ -48,3 +48,73 @@ const COLORS = {
 	GREYTRANSPARENT2: [0, 0, 0, 90],
 	BEIGE: [191, 170, 143],
 };
+
+const BUTTON_ATTACK = {
+	attack_one: {
+		position: [120, 405],
+		color: COLORS.RED_ATTACK_DARK,
+		xp: 0,
+		max_xp: 4,
+		power: ['attack', [0.25, 0.5, 1, 1.5]],
+	},
+
+	attack_two: {
+		position: [120, 325],
+		color: COLORS.RED_ATTACK_DARK,
+		xp: 0,
+		max_xp: 2,
+		power: ['attack', [0.5, 1.25]],
+	},
+};
+
+const BUTTON_POSSESSION = {
+	possession_one: {
+		position: [480, 275],
+		color: COLORS.BLUE_POSSESSION_DARK,
+		xp: 0,
+		max_xp: 4,
+		power: ['possession', [0.25, 0.5, 1, 1.5]],
+	},
+
+	possession_two: {
+		position: [480, 205],
+		color: COLORS.BLUE_POSSESSION_DARK,
+		xp: 0,
+		max_xp: 2,
+		power: ['possession', [0.5, 1.25]],
+	},
+};
+
+const BUTTON_DEFENSE = {
+	defense_one: {
+		position: [840, 405],
+		color: COLORS.GREEN_SHIELD_DARK,
+		xp: 0,
+		max_xp: 4,
+		power: ['defense', [0.25, 0.5, 1, 1.5]],
+	},
+
+	defense_two: {
+		position: [840, 325],
+		color: COLORS.GREEN_SHIELD_DARK,
+		xp: 0,
+		max_xp: 2,
+		power: ['defense', [0.5, 1.25]],
+	},
+
+	resistance_one: {
+		position: [1020, 165],
+		color: COLORS.GREEN_SHIELD_DARK,
+		xp: 0,
+		max_xp: 2,
+		power: ['search', [2.5, 5, 10, 15]],
+	},
+
+	resistance_two: {
+		position: [1020, 85],
+		color: COLORS.GREEN_SHIELD_DARK,
+		xp: 0,
+		max_xp: 1,
+		power: ['search', [5, 12.5]],
+	},
+};

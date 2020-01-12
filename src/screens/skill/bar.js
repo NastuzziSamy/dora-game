@@ -25,12 +25,12 @@ const GAME_SCREEN_BAR_SKILL = {
 
 	drawBarsCompetence: () => {
 		fill(...COLORS.RED_ATTACK);
-		rect( 700, 510, 10 * DEMON.attack, 20);
+		rect( 700, 510, 50 * DEMON.attack, 20);
 
 		fill(...COLORS.BLUE_POSSESSION);
-		rect( 700, 540, 10 * DEMON.possession, 20);
+		rect( 700, 540, 50 * DEMON.possession, 20);
 
 		fill(...COLORS.GREEN_SHIELD);
-		rect( 700, 570, 10 * DEMON.defense, 20);
+		rect( 700, 570, 50 * DEMON.defense, 20);
 	},
 };

@@ -3,61 +3,9 @@ const CANVAS_POSSESSION = [360, 0, 360, 500];
 const CANVAS_DEFENSE = [720, 0, 360, 500];
 const DIAMETER_SKILL_BUTTON = 40;
 
-const BUTTON_ATTACK = {
-	attack_one: {
-		position: [120, 405],
-		color: COLORS.RED_ATTACK_DARK,
-		xp: 4,
-	},
-
-	attack_two: {
-		position: [120, 325],
-		color: COLORS.RED_ATTACK_DARK,
-		xp: 2,
-	},
-};
-
-const BUTTON_POSSESSION = {
-	possession_one: {
-		position: [480, 275],
-		color: COLORS.BLUE_POSSESSION_DARK,
-		xp: 4,
-	},
-
-	possession_two: {
-		position: [480, 205],
-		color: COLORS.BLUE_POSSESSION_DARK,
-		xp: 2,
-	},
-};
-
-const BUTTON_DEFENSE = {
-	defense_one: {
-		position: [840, 405],
-		color: COLORS.GREEN_SHIELD_DARK,
-		xp: 4,
-	},
-
-	defense_two: {
-		position: [840, 325],
-		color: COLORS.GREEN_SHIELD_DARK,
-		xp: 2,
-	},
-
-	resistance_one: {
-		position: [1020, 165],
-		color: COLORS.GREEN_SHIELD_DARK,
-		xp: 2,
-	},
-
-	resistance_two: {
-		position: [1020, 85],
-		color: COLORS.GREEN_SHIELD_DARK,
-		xp: 1,
-	},
-};
-
 const GAME_SCREEN_INTERFACE = {
+
+
 	drawInterface: () => {
 		SKILL_SCREEN.drawAttaque();
 		SKILL_SCREEN.drawPossession();
@@ -81,7 +29,7 @@ const GAME_SCREEN_INTERFACE = {
 		textSize(22);
 		text(['A'], ...BUTTON_ATTACK.attack_one.position);
 		if (mouseInRect(...BUTTON_ATTACK.attack_one.position, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true)) {
-			SKILL_SCREEN.drawInformationCompetence("Attaque débutant - " + DEMON.skills.attack_one + "/" + BUTTON_ATTACK.attack_one.xp);
+			SKILL_SCREEN.drawInformationCompetence("Attaque I - " + BUTTON_ATTACK.attack_one.xp + "/" + BUTTON_ATTACK.attack_one.max_xp);
 		}
 
 		fill(...COLORS.WHITE_TRANSPARENT);
@@ -92,7 +40,7 @@ const GAME_SCREEN_INTERFACE = {
 		textSize(22);
 		text(['A'], ...BUTTON_ATTACK.attack_two.position);
 		if (mouseInRect(...BUTTON_ATTACK.attack_two.position, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true)) {
-			SKILL_SCREEN.drawInformationCompetence("Attanquant confimé, il peut tuer - " + DEMON.skills.attack_two + "/" + BUTTON_ATTACK.attack_two.xp);
+			SKILL_SCREEN.drawInformationCompetence("Attanquant II - " + BUTTON_ATTACK.attack_two.xp + "/" + BUTTON_ATTACK.attack_two.max_xp);
 		}
 
 		if (mouseInRect(...CANVAS_ATTACK)) {
@@ -117,7 +65,7 @@ const GAME_SCREEN_INTERFACE = {
 		textSize(22);
 		text(['P'], ...BUTTON_POSSESSION.possession_one.position);
 		if (mouseInRect(...BUTTON_POSSESSION.possession_one.position, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true)) {
-			SKILL_SCREEN.drawInformationCompetence("Apprenez à posséder - " + DEMON.skills.possession_one + "/" + BUTTON_POSSESSION.possession_one.xp);
+			SKILL_SCREEN.drawInformationCompetence("Possession I - " + BUTTON_POSSESSION.possession_one.xp + "/" + BUTTON_POSSESSION.possession_one.max_xp);
 		}
 
 		fill(...COLORS.WHITE_TRANSPARENT);
@@ -128,7 +76,7 @@ const GAME_SCREEN_INTERFACE = {
 		textSize(22);
 		text(['P'], ...BUTTON_POSSESSION.possession_two.position);
 		if (mouseInRect(...BUTTON_POSSESSION.possession_two.position, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true)) {
-			SKILL_SCREEN.drawInformationCompetence("possession niveau supérieur - " + DEMON.skills.possession_two + "/" + BUTTON_POSSESSION.possession_two.xp);
+			SKILL_SCREEN.drawInformationCompetence("Possession II - " + BUTTON_POSSESSION.possession_two.xp + "/" + BUTTON_POSSESSION.possession_two.max_xp);
 		}
 
 		if (mouseInRect(...CANVAS_POSSESSION)) {
@@ -154,7 +102,7 @@ const GAME_SCREEN_INTERFACE = {
 		textSize(22);
 		text(['D'], ...BUTTON_DEFENSE.defense_one.position);
 		if (mouseInRect(...BUTTON_DEFENSE.defense_one.position, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true)) {
-			SKILL_SCREEN.drawInformationCompetence("Défence niveau 1 - " + DEMON.skills.defense_one + "/" + BUTTON_DEFENSE.defense_one.xp);
+			SKILL_SCREEN.drawInformationCompetence("Défense I - " + BUTTON_DEFENSE.defense_one.xp + "/" + BUTTON_DEFENSE.defense_one.max_xp);
 		}
 
 		fill(...COLORS.WHITE_TRANSPARENT);
@@ -164,7 +112,7 @@ const GAME_SCREEN_INTERFACE = {
 		textSize(22);
 		text(['D'], ...BUTTON_DEFENSE.defense_two.position);
 		if (mouseInRect(...BUTTON_DEFENSE.defense_two.position, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true)) {
-			SKILL_SCREEN.drawInformationCompetence("Défence niveau 2 - " + DEMON.skills.defense_two + "/" + BUTTON_DEFENSE.defense_two.xp);
+			SKILL_SCREEN.drawInformationCompetence("Défense II - " + BUTTON_DEFENSE.defense_two.xp + "/" + BUTTON_DEFENSE.defense_two.max_xp);
 		}
 
 
@@ -176,7 +124,7 @@ const GAME_SCREEN_INTERFACE = {
 		textSize(22);
 		text(['D'], ...BUTTON_DEFENSE.resistance_one.position);
 		if (mouseInRect(...BUTTON_DEFENSE.resistance_one.position, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true)) {
-			SKILL_SCREEN.drawInformationCompetence("Les zombie sont plus résistant - " + DEMON.skills.resistance_one + "/" + BUTTON_DEFENSE.resistance_one.xp);
+			SKILL_SCREEN.drawInformationCompetence("Réduit la resistance des croyants I - " + BUTTON_DEFENSE.resistance_one.xp + "/" + BUTTON_DEFENSE.resistance_one.max_xp);
 		}
 
 		fill(...COLORS.WHITE_TRANSPARENT);
@@ -186,7 +134,7 @@ const GAME_SCREEN_INTERFACE = {
 		textSize(22);
 		text(['D'], ...BUTTON_DEFENSE.resistance_two.position);
 		if (mouseInRect(...BUTTON_DEFENSE.resistance_two.position, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true)) {
-			SKILL_SCREEN.drawInformationCompetence("Les zombie sont encore plus résistant - " + DEMON.skills.resistance_two + "/" + BUTTON_DEFENSE.BUTTON_DEFENSE.resistance_two.xp);
+			SKILL_SCREEN.drawInformationCompetence("Réduit la resistance des croyants II - " + BUTTON_DEFENSE.resistance_two.xp + "/" + BUTTON_DEFENSE.resistance_two.max_xp);
 		}
 
 		if (mouseInRect(...CANVAS_DEFENSE)) {

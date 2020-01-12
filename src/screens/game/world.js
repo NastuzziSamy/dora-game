@@ -34,7 +34,7 @@ const GAME_SCREEN_WORLD = {
 		const timer = Math.ceil(DEMON.timer);
 
 		if (DEMON.xp > DEMON.xp_step) {
-			GAME_SCREEN.drawInformation("Vous venez de gagner un point d'expérience");
+			GAME_SCREEN.drawInformation("Vous avez des points d'expériences non utilisés");
 		}
 	},
 

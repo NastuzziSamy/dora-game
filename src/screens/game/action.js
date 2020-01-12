@@ -94,7 +94,7 @@ const ACTION_SCREEN = {
 				
 				GAME_SCREEN.incrementSearch(ratio_protected * 25 * ((Math.random() * 0.7) + 0.6));
 			
-				DEMON.xp += ratio_dead * ((Math.random() * 0.6) + 0.8);
+				DEMON.xp += ratio_dead * ((Math.random() * 0.3) + 0.3);
 			}
 
 			if (house.alive) {
@@ -109,7 +109,7 @@ const ACTION_SCREEN = {
 
 				house.infected += ratio_infected;
 
-				DEMON.xp += ratio_infected * ((Math.random() * 0.7) + 0.6);
+				DEMON.xp += ratio_infected * ((Math.random() * 0.2) + 0.2);
 			}
 		}
 	},
