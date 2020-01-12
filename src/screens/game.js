@@ -52,6 +52,7 @@ const GAME_SCREEN = Object.assign({
 	},
 
 	executeOneStep: () => {
+		GAME_SCREEN.incrementSearch((GAME_SCREEN.stats.search / 100) * (Math.random() * 0.1));
 		ACTION_SCREEN.attack();
 	},
 

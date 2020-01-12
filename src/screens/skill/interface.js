@@ -19,13 +19,13 @@ const BUTTON_ATTACK = {
 
 const BUTTON_POSSESSION = {
 	possession_one: {
-		position: [480, 475],
+		position: [480, 275],
 		color: COLORS.BLUE_POSSESSION_DARK,
 		xp: 4,
 	},
 
 	possession_two: {
-		position: [480, 405],
+		position: [480, 205],
 		color: COLORS.BLUE_POSSESSION_DARK,
 		xp: 2,
 	},

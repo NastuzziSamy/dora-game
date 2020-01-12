@@ -30,18 +30,13 @@ const GAME_SCREEN_WORLD = {
 		GAME_SCREEN.drawPersonnage();
 	},
 
-	drawPersonnage: () =>{
-		if (DEMON.in){
-			const timer = Math.ceil(DEMON.timer);
-			let xp = timer - DEMON.xp * DEMON.xp_step;
-			if (xp > DEMON.xp_step){
-				DEMON.xp++;
-			}
-			if (xp > DEMON.xp_step || xp < 100){
-				GAME_SCREEN.drawInformation("Vous venez de gagner un point d'expérience ");
-			}
-	}
-},
+	drawPersonnage: () => {
+		const timer = Math.ceil(DEMON.timer);
+
+		if (DEMON.xp > DEMON.xp_step) {
+			GAME_SCREEN.drawInformation("Vous venez de gagner un point d'expérience");
+		}
+	},
 
 	drawInformation: (texte) => {
 		stroke(...COLORS.GREYTRANSPARENT2);

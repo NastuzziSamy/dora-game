@@ -19,7 +19,8 @@ const GAME_SCREEN_BAR_SKILL = {
 		fill(...COLORS.WHITE);
 		textFont("Arial");
 		textSize(20);
-		text("Vos points de compétence: " + Math.floor(DEMON.xp), 400, 560);
+		text("Vos points de compétence: " + Math.floor(DEMON.xp) + " points", 400, 530);
+		text("100 points pour améliorer une compétence", 400, 560);
 	},
 
 	drawBarsCompetence: () => {
