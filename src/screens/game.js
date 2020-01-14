@@ -65,12 +65,12 @@ const GAME_SCREEN = Object.assign({
 
 	checkEnd: () => {
 		if (GAME_SCREEN.stats.search >= 100) {
-
+			Screens.setScreen(SCREEN_NAMES.OVER);
 			return true;
-		}
-
+		} 
+		
 		if (GAME_SCREEN.stats.dead == GAME_SCREEN.stats.total) {
-
+			Screens.setScreen(SCREEN_NAMES.WIN);
 			return true;
 		}
 	},
