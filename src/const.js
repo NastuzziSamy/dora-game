@@ -33,7 +33,7 @@ const MOVIE_MENU = ['src/screens/movie/fond_menu.mp4'];
 const COLORS = {
 	BLUE: [10, 10, 255],
 	GREEN: [10, 255, 10],
-	RED: [255, 10, 10],
+	RED: [255, 50, 50],
 	RED_ATTACK: [142, 51, 57],
 	RED_ATTACK_DARK: [142, 51, 57, 40],
 	BLUE_POSSESSION: [29, 116, 150],

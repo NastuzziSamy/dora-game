@@ -94,8 +94,10 @@ const GAME_SCREEN_WORLD = {
 
 	drawInfo: () => {
 		if (mouseInRect(...SKILL_BUTTON, DIAMETER_SKILL_BUTTON + 50, DIAMETER_SKILL_BUTTON + 50, true)) {
-			fill(...COLORS.GREYTRANSPARENT2)
-			rect(400, BLOCK_HEIGHT, 250, 150)
+			stroke(...COLORS.YELLOW);
+			fill(...COLORS.GREYTRANSPARENT2);
+			rect(400, BLOCK_HEIGHT, 250, 150);
+			noStroke();
 			fill(...COLORS.WHITE);
 			textSize(18);
 			text("Arbre des compétences\nXP accumulés en compteur", 645, BLOCK_HEIGHT + 80);
@@ -107,8 +109,10 @@ const GAME_SCREEN_WORLD = {
 		}
 
 		if (mouseInRect(10, 10, 150, BAR_CENTER_HEIGHT)) {
-			fill(...COLORS.GREYTRANSPARENT2)
-			rect(400, BLOCK_HEIGHT, 250, 150)
+			stroke(...COLORS.YELLOW);
+			fill(...COLORS.GREYTRANSPARENT2);
+			rect(400, BLOCK_HEIGHT, 250, 150);
+			noStroke();
 			fill(...COLORS.WHITE);
 			textSize(18);
 			text("Total des morts\nLa mort se fait\naprès infection", 645, BLOCK_HEIGHT + 80);
@@ -120,8 +124,10 @@ const GAME_SCREEN_WORLD = {
 		}
 
 		if (mouseInRect(200, 10, 150, BAR_CENTER_HEIGHT)) {
-			fill(...COLORS.GREYTRANSPARENT2)
-			rect(400, BLOCK_HEIGHT, 250, 150)
+			stroke(...COLORS.YELLOW);
+			fill(...COLORS.GREYTRANSPARENT2);
+			rect(400, BLOCK_HEIGHT, 250, 150);
+			noStroke();
 			fill(...COLORS.WHITE);
 			textSize(18);
 			text("Cliquer sur une maison\n pour commencer\nl'infection", 645, BLOCK_HEIGHT + 80);
@@ -130,8 +136,10 @@ const GAME_SCREEN_WORLD = {
 		}
 
 		if (mouseInRect(BAR_WIDTH / 2 - 75, 10, 150, BAR_CENTER_HEIGHT)) {
-			fill(...COLORS.GREYTRANSPARENT2)
-			rect(400, BLOCK_HEIGHT, 250, 150)
+			stroke(...COLORS.YELLOW);
+			fill(...COLORS.GREYTRANSPARENT2);
+			rect(400, BLOCK_HEIGHT, 250, 150);
+			noStroke();
 			fill(...COLORS.WHITE);
 			textSize(18);
 			text("Heure actuelle du jeu\nInflue sur l'infection", 645, BLOCK_HEIGHT + 80);
@@ -143,8 +151,10 @@ const GAME_SCREEN_WORLD = {
 		}
 
 		if (mouseInRect(BAR_WIDTH - 350, 10, 150, BAR_CENTER_HEIGHT)) {
-			fill(...COLORS.GREYTRANSPARENT2)
-			rect(400, BLOCK_HEIGHT, 250, 150)
+			stroke(...COLORS.YELLOW);
+			fill(...COLORS.GREYTRANSPARENT2);
+			rect(400, BLOCK_HEIGHT, 250, 150);
+			noStroke();
 			fill(...COLORS.WHITE);
 			textSize(18);
 			text("Taux de résistance\net recherche à l'encontre\n de l'infection.", 645, BLOCK_HEIGHT + 80);
@@ -156,8 +166,10 @@ const GAME_SCREEN_WORLD = {
 		}
 
 		if (mouseInRect(BAR_WIDTH - 160, 10, 150, BAR_CENTER_HEIGHT)) {
-			fill(...COLORS.GREYTRANSPARENT2)
-			rect(400, BLOCK_HEIGHT, 250, 150)
+			stroke(...COLORS.YELLOW);
+			fill(...COLORS.GREYTRANSPARENT2);
+			rect(400, BLOCK_HEIGHT, 250, 150);
+			noStroke();
 			fill(...COLORS.WHITE);
 			textSize(18);
 			text("Personnes encore\nnon-infectées", 645, BLOCK_HEIGHT + 80);
@@ -172,8 +184,10 @@ const GAME_SCREEN_WORLD = {
 			let house = HOUSES[i];
 
 			if (mouseInRect(...house.position)) {
-				fill(...COLORS.GREYTRANSPARENT2)
-				rect(400, BLOCK_HEIGHT, 250, 150)
+				stroke(...COLORS.YELLOW);
+				fill(...COLORS.GREYTRANSPARENT2);
+				rect(400, BLOCK_HEIGHT, 250, 150);
+				noStroke();
 				fill(...COLORS.WHITE);
 				textSize(20);
 				text("Vivants: " + Math.ceil(house.alive), 640, BLOCK_HEIGHT + 25);
