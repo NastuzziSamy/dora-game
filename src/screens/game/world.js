@@ -98,7 +98,10 @@ const GAME_SCREEN_WORLD = {
 			rect(400, BLOCK_HEIGHT, 250, 150)
 			fill(...COLORS.WHITE);
 			textSize(18);
-			text("Cliquer pour ouvrir la vue\nde l'arbre de compétences", 645, BLOCK_HEIGHT + 80);
+			text("Arbre des compétences\nXP accumulés en compteur", 645, BLOCK_HEIGHT + 80);
+			fill(...COLORS.RED);
+			textSize(16);
+			text("Cliquer pour ouvrir", 640, BLOCK_HEIGHT + 130);
 
 			return;
 		}
@@ -108,7 +111,10 @@ const GAME_SCREEN_WORLD = {
 			rect(400, BLOCK_HEIGHT, 250, 150)
 			fill(...COLORS.WHITE);
 			textSize(18);
-			text("Le but est de tuer\n tout le monde\nen les infectant d'abord", 645, BLOCK_HEIGHT + 80);
+			text("Total des morts\nLa mort se fait\naprès infection", 645, BLOCK_HEIGHT + 80);
+			fill(...COLORS.RED);
+			textSize(16);
+			text("Tuez tout le monde!", 640, BLOCK_HEIGHT + 130);
 
 			return;
 		}
@@ -123,12 +129,15 @@ const GAME_SCREEN_WORLD = {
 			return;
 		}
 
-		if (mouseInRect(BAR_WIDTH - 350, 10, 150, BAR_CENTER_HEIGHT)) {
+		if (mouseInRect(BAR_WIDTH / 2 - 75, 10, 150, BAR_CENTER_HEIGHT)) {
 			fill(...COLORS.GREYTRANSPARENT2)
 			rect(400, BLOCK_HEIGHT, 250, 150)
 			fill(...COLORS.WHITE);
 			textSize(18);
-			text("Taux de résistance\net recherche à l'encontre\n de l'infection", 645, BLOCK_HEIGHT + 80);
+			text("Heure actuelle du jeu\nInflue sur l'infection", 645, BLOCK_HEIGHT + 80);
+			fill(...COLORS.RED);
+			textSize(16);
+			text("Pause, accélérer x1, x2, x4", 640, BLOCK_HEIGHT + 130);
 
 			return;
 		}
@@ -138,7 +147,10 @@ const GAME_SCREEN_WORLD = {
 			rect(400, BLOCK_HEIGHT, 250, 150)
 			fill(...COLORS.WHITE);
 			textSize(18);
-			text("Taux de résistance\net recherche à l'encontre\n de l'infection. A 100%,\nc'est perdu", 645, BLOCK_HEIGHT + 80);
+			text("Taux de résistance\net recherche à l'encontre\n de l'infection.", 645, BLOCK_HEIGHT + 80);
+			fill(...COLORS.RED);
+			textSize(16);
+			text("A 100%, c'est perdu", 640, BLOCK_HEIGHT + 130);
 
 			return;
 		}
@@ -148,7 +160,10 @@ const GAME_SCREEN_WORLD = {
 			rect(400, BLOCK_HEIGHT, 250, 150)
 			fill(...COLORS.WHITE);
 			textSize(18);
-			text("Personnes encore non-\ninfectées. Il faut toutes\nles tuer pour gagner!", 645, BLOCK_HEIGHT + 80);
+			text("Personnes encore\nnon-infectées", 645, BLOCK_HEIGHT + 80);
+			fill(...COLORS.RED);
+			textSize(16);
+			text("Tuez tout le monde !", 640, BLOCK_HEIGHT + 130);
 
 			return;
 		}
