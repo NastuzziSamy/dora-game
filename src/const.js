@@ -107,7 +107,7 @@ const BUTTON_DEFENSE = {
 		color: COLORS.GREEN_SHIELD_DARK,
 		xp: 0,
 		max_xp: 2,
-		power: ['search', [2.5, 5, 10, 15]],
+		power: ['search', [5, 12.5]],
 	},
 
 	resistance_two: {
@@ -115,6 +115,6 @@ const BUTTON_DEFENSE = {
 		color: COLORS.GREEN_SHIELD_DARK,
 		xp: 0,
 		max_xp: 1,
-		power: ['search', [5, 12.5]],
+		power: ['search', [10]],
 	},
 };

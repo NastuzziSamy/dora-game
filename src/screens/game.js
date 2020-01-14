@@ -53,17 +53,26 @@ const GAME_SCREEN = Object.assign({
 
 	executeOneStep: () => {
 		if (DEMON.search) {
-			if (DEMON.search > GAME_SCREEN.stats.search) {
-				DEMON.search = GAME_SCREEN.stats.search;
-				GAME_SCREEN.stats.search = 0;
-			} else {
-				GAME_SCREEN.stats.search -= DEMON.search;
-				DEMON.search = 0;
-			}
+			GAME_SCREEN.stats.search -= GAME_SCREEN.stats.search * DEMON.search / 100;
+			DEMON.search = 0;
 		}
 
-		GAME_SCREEN.incrementSearch((GAME_SCREEN.stats.search / 100) * (Math.random() * 0.1));
-		ACTION_SCREEN.attack();
+		if (!GAME_SCREEN.checkEnd()) {
+			GAME_SCREEN.incrementSearch((GAME_SCREEN.stats.search / 100) * (Math.random() * 0.1));
+			ACTION_SCREEN.attack();
+		}
+	},
+
+	checkEnd: () => {
+		if (GAME_SCREEN.stats.search >= 100) {
+
+			return true;
+		}
+
+		if (GAME_SCREEN.stats.dead == GAME_SCREEN.stats.total) {
+
+			return true;
+		}
 	},
 
 	incrementTimer: (seconds) => {

@@ -55,7 +55,7 @@ const GAME_SCREEN_BAR = {
 	},
 
 	drawAlive: () => {
-		const alive = Math.floor((GAME_SCREEN.stats.total - GAME_SCREEN.stats.infected - GAME_SCREEN.stats.dead) * 100 / GAME_SCREEN.stats.total);
+		const alive = Math.ceil(((GAME_SCREEN.stats.total - GAME_SCREEN.stats.infected - GAME_SCREEN.stats.dead) * 100 / GAME_SCREEN.stats.total) - 0.01);
 
 		fill(...COLORS.GREY);
 		noStroke();
