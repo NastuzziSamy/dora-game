@@ -17,6 +17,15 @@ const GAME_SCREEN_BAR = {
 		noStroke();
 		textSize(22);
 		textAlign(LEFT, CENTER);
+
+		if (dead > 75) {
+			fill(...COLORS.BLUE);
+		
+			if (dead > 90) {
+				fill(...COLORS.DARK);
+			}
+		}
+
 		text('🕱 ' + dead + '% morts', 10, BAR_CENTER_HEIGHT);
 	},
 
@@ -37,16 +46,30 @@ const GAME_SCREEN_BAR = {
 		noStroke();
 		textSize(22);
 		textAlign(RIGHT, CENTER);
+
+		if (search >= 50) {
+			fill(...COLORS.RED);
+		}
+
 		text(search + '% trouvés 🚨', BAR_WIDTH - 200, BAR_CENTER_HEIGHT);
 	},
 
 	drawAlive: () => {
-		const alive = Math.ceil((GAME_SCREEN.stats.total - GAME_SCREEN.stats.infected - GAME_SCREEN.stats.dead) * 100 / GAME_SCREEN.stats.total);
+		const alive = Math.floor((GAME_SCREEN.stats.total - GAME_SCREEN.stats.infected - GAME_SCREEN.stats.dead) * 100 / GAME_SCREEN.stats.total);
 
 		fill(...COLORS.GREY);
 		noStroke();
 		textSize(22);
 		textAlign(RIGHT, CENTER);
+
+		if (alive < 25) {
+			fill(...COLORS.BLUE);
+
+			if (alive < 1) {
+				fill(...COLORS.DARK);
+			}
+		}
+
 		text(alive + '% sains 👨', BAR_WIDTH - 10, BAR_CENTER_HEIGHT);
 	},
 
