@@ -15,6 +15,8 @@ const SCREEN_NAMES = {
 	GAME: 'game',
 	SKILL: 'skill',
 	ACTION: 'action',
+	WIN: 'win',
+	OVER: 'over',
 }
 
 const ACTION_STEP = 5;
