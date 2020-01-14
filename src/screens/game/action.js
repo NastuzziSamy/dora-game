@@ -93,14 +93,14 @@ const ACTION_SCREEN = {
 				}
 
 				house.dead += ratio_dead;
-				ratio_protected = (ratio_dead / (house.alive + house.infected + house.dead)) * house.protection * 5;
+				ratio_protected = (ratio_dead / (house.alive + house.infected + house.dead)) * house.protection * 7.5;
 
 
 				house.protection -= ratio_protected;
 				
-				GAME_SCREEN.incrementSearch(ratio_protected * 15 * Math.random());
+				GAME_SCREEN.incrementSearch(ratio_protected * 20 * Math.random());
 			
-				DEMON.xp += ratio_dead * ((Math.random() * 0.15) + 0.2);
+				DEMON.xp += ratio_dead * ((Math.random() * 0.15) + 0.1);
 			}
 
 			if (house.alive) {
@@ -125,10 +125,10 @@ const ACTION_SCREEN = {
 					house.alive = 0;
 				}
 
-				GAME_SCREEN.incrementSearch(ratio_infected * Math.random() * 0.001);
+				GAME_SCREEN.incrementSearch(ratio_infected * Math.random() * 0.01);
 
 				if (ratio_protection >= 0) {
-					DEMON.xp += ratio_infected * ((Math.random() * 0.25) + 0.3);
+					DEMON.xp += ratio_infected * ((Math.random() * 0.25) + 0.2);
 				}
 			}
 		}

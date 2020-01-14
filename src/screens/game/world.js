@@ -190,6 +190,19 @@ const GAME_SCREEN_WORLD = {
 		textAlign(CENTER, CENTER);
 		textSize(16);
 		text(['Voir\nCompét.'], ...SKILL_BUTTON);
+		noFill();
+		stroke(...COLORS.BLUE);
+		if (DEMON.xp >= 100) {
+			arc(...SKILL_BUTTON, DIAMETER_PAUSE_BUTTON + 75, DIAMETER_PAUSE_BUTTON + 75, -HALF_PI, -HALF_PI);
+			stroke(...COLORS.RED);
+			if (DEMON.xp >= 200) {
+				arc(...SKILL_BUTTON, DIAMETER_PAUSE_BUTTON + 75, DIAMETER_PAUSE_BUTTON + 75, -HALF_PI, ((2 * PI) * ((DEMON.xp - 100 + 0.01) / 100)) - HALF_PI);
+			} else {
+				arc(...SKILL_BUTTON, DIAMETER_PAUSE_BUTTON + 75, DIAMETER_PAUSE_BUTTON + 75, -HALF_PI, -HALF_PI);
+			}
+		} else {
+			arc(...SKILL_BUTTON, DIAMETER_PAUSE_BUTTON + 75, DIAMETER_PAUSE_BUTTON + 75, -HALF_PI, ((2 * PI) * ((DEMON.xp + 0.01) / 100)) - HALF_PI);
+		}
 	},
 
 

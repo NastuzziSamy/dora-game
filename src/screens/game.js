@@ -12,6 +12,7 @@ const GAME_SCREEN = Object.assign({
 	name: SCREEN_NAMES.GAME,
 
 	// Temps de base en 0.1 s.
+	total_time: 0,
 	timer: 12 * 60 * 10,
 	timer_last_step: 12 * 60,
 	paused: false,
@@ -80,6 +81,7 @@ const GAME_SCREEN = Object.assign({
 			seconds = SPEEDS[GAME_SCREEN.speed];
 		}
 
+		GAME_SCREEN.total_time += seconds;
 		GAME_SCREEN.timer = (GAME_SCREEN.timer + seconds) % (24 * 60 * 10);
 
 		let timer_diff = Math.floor(GAME_SCREEN.timer / ACTION_STEP) - GAME_SCREEN.timer_last_step;

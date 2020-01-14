@@ -7,7 +7,7 @@ var HOUSES = shuffle([
 		alive: 230 + (Math.random() * 100) - 50,
 		infected: 0,
 		dead: 0,
-		protection: 0.10 + (Math.random() * 0.2) - 0.1,
+		protection: 0.20 + (Math.random() * 0.2) - 0.1,
 	},
 	// Maison 1
 	{
@@ -39,7 +39,7 @@ var HOUSES = shuffle([
 		alive: 260 + (Math.random() * 100) - 50,
 		infected: 0,
 		dead: 0,
-		protection: 0.10 + (Math.random() * 0.2) - 0.1,
+		protection: 0.15 + (Math.random() * 0.2) - 0.1,
 	},
 	// Maison 5
 	{
