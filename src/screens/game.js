@@ -64,7 +64,7 @@ const GAME_SCREEN = Object.assign({
 	},
 
 	checkEnd: () => {
-		if (GAME_SCREEN.stats.search >= 100) {
+		if (GAME_SCREEN.stats.search >= 10) {
 			Screens.setScreen(SCREEN_NAMES.OVER);
 			return true;
 		} 
