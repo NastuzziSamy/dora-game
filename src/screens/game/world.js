@@ -87,8 +87,13 @@ const GAME_SCREEN_WORLD = {
 				((COLORS.BEIGE[2] * ratio_alive) + (COLORS.RED[2] * ratio_infected) + (COLORS.BLACK[2] * ratio_dead)),
 			];
 
+			if (ACTION_SCREEN.current_house === house && GAME_SCREEN.timer % 3) {
+				stroke(...COLORS.YELLOW);
+			}
+
 			fill(...color);
 			rect(...house.position);
+			noStroke();
 		}
 	},
 
