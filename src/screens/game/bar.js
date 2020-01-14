@@ -22,10 +22,10 @@ const GAME_SCREEN_BAR = {
 			fill(...COLORS.BLUE);
 		
 			if (dead > 90) {
-				fill(...COLORS.DARK);
+				fill(0);
 			}
 		}
-
+		
 		text('🕱 ' + dead + '% morts', 10, BAR_CENTER_HEIGHT);
 	},
 
@@ -66,7 +66,7 @@ const GAME_SCREEN_BAR = {
 			fill(...COLORS.BLUE);
 
 			if (alive < 1) {
-				fill(...COLORS.DARK);
+				fill(0);
 			}
 		}
 

@@ -103,6 +103,56 @@ const GAME_SCREEN_WORLD = {
 			return;
 		}
 
+		if (mouseInRect(10, 10, 150, BAR_CENTER_HEIGHT)) {
+			fill(...COLORS.GREYTRANSPARENT2)
+			rect(400, BLOCK_HEIGHT, 250, 150)
+			fill(...COLORS.WHITE);
+			textSize(18);
+			text("Le but est de tuer\n tout le monde\nen les infectant d'abord", 645, BLOCK_HEIGHT + 80);
+
+			return;
+		}
+
+		if (mouseInRect(200, 10, 150, BAR_CENTER_HEIGHT)) {
+			fill(...COLORS.GREYTRANSPARENT2)
+			rect(400, BLOCK_HEIGHT, 250, 150)
+			fill(...COLORS.WHITE);
+			textSize(18);
+			text("Cliquer sur une maison\n pour commencer\nl'infection", 645, BLOCK_HEIGHT + 80);
+
+			return;
+		}
+
+		if (mouseInRect(BAR_WIDTH - 350, 10, 150, BAR_CENTER_HEIGHT)) {
+			fill(...COLORS.GREYTRANSPARENT2)
+			rect(400, BLOCK_HEIGHT, 250, 150)
+			fill(...COLORS.WHITE);
+			textSize(18);
+			text("Taux de résistance\net recherche à l'encontre\n de l'infection", 645, BLOCK_HEIGHT + 80);
+
+			return;
+		}
+
+		if (mouseInRect(BAR_WIDTH - 350, 10, 150, BAR_CENTER_HEIGHT)) {
+			fill(...COLORS.GREYTRANSPARENT2)
+			rect(400, BLOCK_HEIGHT, 250, 150)
+			fill(...COLORS.WHITE);
+			textSize(18);
+			text("Taux de résistance\net recherche à l'encontre\n de l'infection. A 100%,\nc'est perdu", 645, BLOCK_HEIGHT + 80);
+
+			return;
+		}
+
+		if (mouseInRect(BAR_WIDTH - 160, 10, 150, BAR_CENTER_HEIGHT)) {
+			fill(...COLORS.GREYTRANSPARENT2)
+			rect(400, BLOCK_HEIGHT, 250, 150)
+			fill(...COLORS.WHITE);
+			textSize(18);
+			text("Personnes encore non-\ninfectées. Il faut toutes\nles tuer pour gagner!", 645, BLOCK_HEIGHT + 80);
+
+			return;
+		}
+
 		for (let i = 0; i < HOUSES.length; i++) {
 			let house = HOUSES[i];
 
