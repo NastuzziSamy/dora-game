@@ -18,7 +18,11 @@ const GAME_SCREEN_INTERFACE = {
 		textSize(40);
 		textAlign(CENTER);
 		textFont(loadKells_SD);
-		text("ATTACK", 180, 35);
+		text("ATTAQUE", 180, 35);
+		textFont("Arial");
+		fill(200, 200, 200);
+		textSize(16);
+		text("Augmente la létalité de l'infection", 180, 65);
 
 
 		fill(...COLORS.WHITE_TRANSPARENT);
@@ -56,6 +60,10 @@ const GAME_SCREEN_INTERFACE = {
 		textAlign(CENTER);
 		textFont(loadKells_SD);
 		text("POSSESSION", 540, 20);
+		textFont("Arial");
+		fill(200, 200, 200);
+		textSize(16);
+		text("Augmente la rapidité d'infection", 540, 65);
 
 		fill(...COLORS.WHITE_TRANSPARENT);
 		circle(...BUTTON_POSSESSION.possession_one.position, DIAMETER_SKILL_BUTTON);
@@ -92,6 +100,10 @@ const GAME_SCREEN_INTERFACE = {
 		textAlign(CENTER);
 		textFont(loadKells_SD);
 		text("DEFENSE", 900, 20);
+		textFont("Arial");
+		fill(200, 200, 200);
+		textSize(16);
+		text("Réduit la recherche et la résistance", 900, 65);
 
 
 		fill(...COLORS.WHITE_TRANSPARENT);
@@ -102,7 +114,7 @@ const GAME_SCREEN_INTERFACE = {
 		textSize(22);
 		text(['D'], ...BUTTON_DEFENSE.defense_one.position);
 		if (mouseInRect(...BUTTON_DEFENSE.defense_one.position, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true)) {
-			SKILL_SCREEN.drawInformationCompetence("Défense I - " + BUTTON_DEFENSE.defense_one.xp + "/" + BUTTON_DEFENSE.defense_one.max_xp);
+			SKILL_SCREEN.drawInformationCompetence("Réduction résistance I - " + BUTTON_DEFENSE.defense_one.xp + "/" + BUTTON_DEFENSE.defense_one.max_xp);
 		}
 
 		fill(...COLORS.WHITE_TRANSPARENT);
@@ -112,7 +124,7 @@ const GAME_SCREEN_INTERFACE = {
 		textSize(22);
 		text(['D'], ...BUTTON_DEFENSE.defense_two.position);
 		if (mouseInRect(...BUTTON_DEFENSE.defense_two.position, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true)) {
-			SKILL_SCREEN.drawInformationCompetence("Défense II - " + BUTTON_DEFENSE.defense_two.xp + "/" + BUTTON_DEFENSE.defense_two.max_xp);
+			SKILL_SCREEN.drawInformationCompetence("Réduction résistance II - " + BUTTON_DEFENSE.defense_two.xp + "/" + BUTTON_DEFENSE.defense_two.max_xp);
 		}
 
 
@@ -124,7 +136,7 @@ const GAME_SCREEN_INTERFACE = {
 		textSize(22);
 		text(['D'], ...BUTTON_DEFENSE.resistance_one.position);
 		if (mouseInRect(...BUTTON_DEFENSE.resistance_one.position, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true)) {
-			SKILL_SCREEN.drawInformationCompetence("Réduit la resistance des croyants I - " + BUTTON_DEFENSE.resistance_one.xp + "/" + BUTTON_DEFENSE.resistance_one.max_xp);
+			SKILL_SCREEN.drawInformationCompetence("Sabotage recherche I - " + BUTTON_DEFENSE.resistance_one.xp + "/" + BUTTON_DEFENSE.resistance_one.max_xp);
 		}
 
 		fill(...COLORS.WHITE_TRANSPARENT);
@@ -134,7 +146,7 @@ const GAME_SCREEN_INTERFACE = {
 		textSize(22);
 		text(['D'], ...BUTTON_DEFENSE.resistance_two.position);
 		if (mouseInRect(...BUTTON_DEFENSE.resistance_two.position, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true)) {
-			SKILL_SCREEN.drawInformationCompetence("Réduit la resistance des croyants II - " + BUTTON_DEFENSE.resistance_two.xp + "/" + BUTTON_DEFENSE.resistance_two.max_xp);
+			SKILL_SCREEN.drawInformationCompetence("Sabotage recherche II - " + BUTTON_DEFENSE.resistance_two.xp + "/" + BUTTON_DEFENSE.resistance_two.max_xp);
 		}
 
 		if (mouseInRect(...CANVAS_DEFENSE)) {

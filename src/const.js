@@ -103,7 +103,7 @@ const BUTTON_DEFENSE = {
 	},
 
 	resistance_one: {
-		position: [1020, 165],
+		position: [1020, 195],
 		color: COLORS.GREEN_SHIELD_DARK,
 		xp: 0,
 		max_xp: 2,
@@ -111,7 +111,7 @@ const BUTTON_DEFENSE = {
 	},
 
 	resistance_two: {
-		position: [1020, 85],
+		position: [1020, 115],
 		color: COLORS.GREEN_SHIELD_DARK,
 		xp: 0,
 		max_xp: 1,
