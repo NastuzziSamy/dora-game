@@ -93,7 +93,7 @@ const BUTTON_DEFENSE = {
 		color: COLORS.GREEN_SHIELD_DARK,
 		xp: 0,
 		max_xp: 4,
-		power: ['defense', [0.25, 0.5, 1, 1.5]],
+		power: ['defense', [0.5, 1, 1.5, 2]],
 	},
 
 	defense_two: {
@@ -101,7 +101,7 @@ const BUTTON_DEFENSE = {
 		color: COLORS.GREEN_SHIELD_DARK,
 		xp: 0,
 		max_xp: 2,
-		power: ['defense', [0.5, 1.25]],
+		power: ['defense', [1.5, 2.25]],
 	},
 
 	resistance_one: {
@@ -109,7 +109,7 @@ const BUTTON_DEFENSE = {
 		color: COLORS.GREEN_SHIELD_DARK,
 		xp: 0,
 		max_xp: 2,
-		power: ['search', [5, 12.5]],
+		power: ['search', [5, 15]],
 	},
 
 	resistance_two: {
@@ -117,6 +117,6 @@ const BUTTON_DEFENSE = {
 		color: COLORS.GREEN_SHIELD_DARK,
 		xp: 0,
 		max_xp: 1,
-		power: ['search', [10]],
+		power: ['search', [12.5]],
 	},
 };

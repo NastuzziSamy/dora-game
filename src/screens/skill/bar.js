@@ -6,12 +6,12 @@ const GAME_SCREEN_BAR_SKILL = {
 	},
 
 	drawButtonExit: () => {
-		fill(...COLORS.WHITE_TRANSPARENT);
-		circle(...EXIT_BUTTON, DIAMETER_EXIT_BUTTON + 10);
-		fill(...COLORS.RED);
+		fill(...COLORS.YELLOW);
+		circle(...SKILL_BUTTON, DIAMETER_PAUSE_BUTTON + 75);
+		fill(...COLORS.BLACK);
 		textAlign(CENTER, CENTER);
-		textSize(22);
-		text(['X'], ...EXIT_BUTTON);
+		textSize(16);
+		text('Revenir\nen jeu', ...SKILL_BUTTON);
 	},
 
 	drawDemon: () => {

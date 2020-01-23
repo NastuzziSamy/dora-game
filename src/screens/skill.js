@@ -21,7 +21,7 @@ const SKILL_SCREEN = Object.assign({
 	mousePressed: () => {
 		button = null;
 
-		if (mouseInRect(...EXIT_BUTTON, DIAMETER_PAUSE_BUTTON + 10, DIAMETER_PAUSE_BUTTON + 10, true)) {
+		if (mouseInRect(...SKILL_BUTTON, DIAMETER_SKILL_BUTTON + 50, DIAMETER_SKILL_BUTTON + 50, true)) {
 			Screens.setScreen(SCREEN_NAMES.GAME);
 		} else if (mouseInRect(...BUTTON_DEFENSE.defense_one.position, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true)) {
 			button = BUTTON_DEFENSE.defense_one;
