@@ -24,6 +24,9 @@ const GAME_SCREEN_INTERFACE = {
 		textSize(16);
 		text("Augmente la létalité de l'infection", 180, 65);
 
+		fill(...COLORS.BLACK);
+		rect(BUTTON_ATTACK.attack_one.position[0] - 1, BUTTON_ATTACK.attack_two.position[1], 2, BUTTON_ATTACK.attack_one.position[1] - BUTTON_ATTACK.attack_two.position[1]);
+
 		if (mouseInRect(...CANVAS_ATTACK)) {
 			fill(...COLORS.WHITE_TRANSPARENT);
 			rect(...CANVAS_ATTACK);
@@ -32,6 +35,7 @@ const GAME_SCREEN_INTERFACE = {
 		fill(...COLORS.WHITE);
 		circle(...BUTTON_ATTACK.attack_one.position, DIAMETER_SKILL_BUTTON);
 		fill(...COLORS.RED_ATTACK);
+
 		textAlign(CENTER, CENTER);
 		textFont("Arial");
 		textSize(22);
@@ -89,6 +93,9 @@ const GAME_SCREEN_INTERFACE = {
 		textSize(16);
 		text("Augmente la rapidité d'infection", 540, 65);
 
+		fill(...COLORS.BLACK);
+		rect(BUTTON_POSSESSION.possession_one.position[0] - 1, BUTTON_POSSESSION.possession_two.position[1], 2, BUTTON_POSSESSION.possession_one.position[1] - BUTTON_POSSESSION.possession_two.position[1]);
+		
 		if (mouseInRect(...CANVAS_POSSESSION)) {
 			fill(...COLORS.WHITE_TRANSPARENT);
 			rect(...CANVAS_POSSESSION);
@@ -154,6 +161,11 @@ const GAME_SCREEN_INTERFACE = {
 		textSize(16);
 		text("Réduit la recherche et la résistance", 900, 65);
 		
+		fill(...COLORS.BLACK);
+		rect(BUTTON_DEFENSE.defense_one.position[0] - 1, BUTTON_DEFENSE.defense_two.position[1], 2, BUTTON_DEFENSE.defense_one.position[1] - BUTTON_DEFENSE.defense_two.position[1]);
+		fill(...COLORS.BLACK);
+		rect(BUTTON_DEFENSE.resistance_one.position[0] - 1, BUTTON_DEFENSE.resistance_two.position[1], 2, BUTTON_DEFENSE.resistance_one.position[1] - BUTTON_DEFENSE.resistance_two.position[1]);
+
 		if (mouseInRect(...CANVAS_DEFENSE)) {
 			fill(...COLORS.WHITE_TRANSPARENT);
 			rect(...CANVAS_DEFENSE);

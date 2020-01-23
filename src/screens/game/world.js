@@ -105,7 +105,7 @@ const GAME_SCREEN_WORLD = {
 			noStroke();
 			fill(...COLORS.WHITE);
 			textSize(18);
-			text("Arbre des compétences\nXP accumulés en compteur", 645, BLOCK_HEIGHT + 80);
+			text("Arbre des compétences\nXP accumulés\n en compteur", 645, BLOCK_HEIGHT + 70);
 			fill(...COLORS.RED);
 			textSize(16);
 			text("Cliquer pour ouvrir", 640, BLOCK_HEIGHT + 130);
