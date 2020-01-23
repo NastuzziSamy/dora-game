@@ -1,10 +1,18 @@
 var loadKells_SD;
 
 var HOUSES = shuffle([
+	// Maison 0
+	{
+		position: [275, BAR_HEIGHT + 15, 215, 105],
+		alive: 280 + (Math.random() * 70) - 35,
+		infected: 0,
+		dead: 0,
+		protection: 0.40 + (Math.random() * 0.2) - 0.1,
+	},
 	// Maison 1
 	{
-		position: [275, BAR_HEIGHT + 15, 215, 175],
-		alive: 670 + (Math.random() * 70) - 35,
+		position: [275, BAR_HEIGHT + 125, 215, 65],
+		alive: 340 + (Math.random() * 70) - 35,
 		infected: 0,
 		dead: 0,
 		protection: 0.40 + (Math.random() * 0.2) - 0.1,

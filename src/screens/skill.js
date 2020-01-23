@@ -26,19 +26,27 @@ const SKILL_SCREEN = Object.assign({
 		} else if (mouseInRect(...BUTTON_DEFENSE.defense_one.position, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true)) {
 			button = BUTTON_DEFENSE.defense_one;
 		} else if (mouseInRect(...BUTTON_DEFENSE.defense_two.position, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true)) {
-			button = BUTTON_DEFENSE.defense_two;
+			if (BUTTON_DEFENSE.defense_one.xp === BUTTON_DEFENSE.defense_one.max_xp) {
+				button = BUTTON_DEFENSE.defense_two;
+			}
 		} else if (mouseInRect(...BUTTON_DEFENSE.resistance_one.position, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true)) {
 			button = BUTTON_DEFENSE.resistance_one;
 		} else if (mouseInRect(...BUTTON_DEFENSE.resistance_two.position, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true)) {
-			button = BUTTON_DEFENSE.resistance_two;
+			if (BUTTON_DEFENSE.resistance_one.xp === BUTTON_DEFENSE.resistance_one.max_xp) {
+				button = BUTTON_DEFENSE.resistance_two;
+			}
 		} else if (mouseInRect(...BUTTON_POSSESSION.possession_one.position, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true)) {
 			button = BUTTON_POSSESSION.possession_one;
 		} else if (mouseInRect(...BUTTON_POSSESSION.possession_two.position, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true)) {
-			button = BUTTON_POSSESSION.possession_two;
+			if (BUTTON_POSSESSION.possession_one.xp === BUTTON_POSSESSION.possession_one.max_xp) {
+				button = BUTTON_POSSESSION.possession_two;
+			}
 		} else if (mouseInRect(...BUTTON_ATTACK.attack_one.position, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true)) {
 			button = BUTTON_ATTACK.attack_one;
 		} else if (mouseInRect(...BUTTON_ATTACK.attack_two.position, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true)) {
-			button = BUTTON_ATTACK.attack_two;
+			if (BUTTON_ATTACK.attack_two.xp === BUTTON_ATTACK.attack_two.max_xp) {
+				button = BUTTON_ATTACK.attack_two;
+			}
 		}
 
 		if (button && DEMON.xp >= DEMON.xp_step && button.xp < button.max_xp) {
