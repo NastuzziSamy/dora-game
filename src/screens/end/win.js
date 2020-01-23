@@ -47,11 +47,12 @@ const WIN_SCREEN = {
 		drawStats: () => {
 			fill(...COLORS.WHITE);
 			noStroke();
-			textSize(26);
+			textSize(20);
 			textAlign(CENTER, CENTER);
 			textFont("Arial");
 			text("Personnes tuées: " + Math.ceil(GAME_SCREEN.stats.dead), width / 2, (height / 2) - 25);
-			text("Taux de recherche: " + Math.ceil(GAME_SCREEN.stats.search) + '%', width / 2, (height / 2) + 25);
+			text("Taux de recherche: " + Math.ceil(GAME_SCREEN.stats.search) + '%', width / 2, (height / 2));
+			text("Score: " + (Math.ceil(GAME_SCREEN.stats.dead) * 150) * (100 - Math.ceil(GAME_SCREEN.stats.search)) / 100, width / 2, (height / 2) + 25);
 		},
 
 		drawPlay: () => {
