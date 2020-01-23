@@ -13,7 +13,7 @@ const GAME_SCREEN_INTERFACE = {
 	},
 
 	drawAttaque: () => {
-
+		noStroke();
 		fill(...COLORS.RED_ATTACK);
 		textSize(40);
 		textAlign(CENTER);
@@ -29,11 +29,7 @@ const GAME_SCREEN_INTERFACE = {
 			rect(...CANVAS_ATTACK);
 		}
 
-		if (BUTTON_ATTACK.attack_one.xp === BUTTON_ATTACK.attack_one.max_xp) {
-			fill(...COLORS.WHITE);
-		} else {
-			fill(...COLORS.WHITE_TRANSPARENT);
-		}
+		fill(...COLORS.WHITE);
 		circle(...BUTTON_ATTACK.attack_one.position, DIAMETER_SKILL_BUTTON);
 		fill(...COLORS.RED_ATTACK);
 		textAlign(CENTER, CENTER);
@@ -43,11 +39,21 @@ const GAME_SCREEN_INTERFACE = {
 		if (mouseInRect(...BUTTON_ATTACK.attack_one.position, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true)) {
 			SKILL_SCREEN.drawInformationCompetence("Attaque I - " + BUTTON_ATTACK.attack_one.xp + "/" + BUTTON_ATTACK.attack_one.max_xp);
 		}
+		ratio = BUTTON_ATTACK.attack_one.xp / BUTTON_ATTACK.attack_one.max_xp;
+		strokeWeight(6);
+		stroke(...COLORS.RED_ATTACK);
+		noFill();
+		if (ratio === 1) {
+			circle(...BUTTON_ATTACK.attack_one.position, DIAMETER_SKILL_BUTTON + 2, DIAMETER_SKILL_BUTTON + 2);
+		} else if (ratio !== 0) {
+			arc(...BUTTON_ATTACK.attack_one.position, DIAMETER_SKILL_BUTTON + 2, DIAMETER_SKILL_BUTTON + 2, -HALF_PI, ((2 * PI) * (ratio + 0.01)) - HALF_PI);		
+		}
+		noStroke();
 
-		if (BUTTON_ATTACK.attack_two.xp === BUTTON_ATTACK.attack_two.max_xp) {
+		if (ratio === 1) {
 			fill(...COLORS.WHITE);
 		} else {
-			fill(...COLORS.WHITE_TRANSPARENT);
+			fill(...COLORS.GREYTRANSPARENT2);
 		}
 		circle(...BUTTON_ATTACK.attack_two.position, DIAMETER_SKILL_BUTTON);
 		fill(...COLORS.RED_ATTACK);
@@ -56,12 +62,23 @@ const GAME_SCREEN_INTERFACE = {
 		textSize(22);
 		text(['A'], ...BUTTON_ATTACK.attack_two.position);
 		if (mouseInRect(...BUTTON_ATTACK.attack_two.position, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true)) {
-			SKILL_SCREEN.drawInformationCompetence("Attanquant II - " + BUTTON_ATTACK.attack_two.xp + "/" + BUTTON_ATTACK.attack_two.max_xp);
+			SKILL_SCREEN.drawInformationCompetence("Attaque II - " + BUTTON_ATTACK.attack_two.xp + "/" + BUTTON_ATTACK.attack_two.max_xp);
 		}
+		ratio = BUTTON_ATTACK.attack_two.xp / BUTTON_ATTACK.attack_two.max_xp;
+		strokeWeight(6);
+		stroke(...COLORS.RED_ATTACK);
+		noFill();
+		if (ratio === 1) {
+			circle(...BUTTON_ATTACK.attack_two.position, DIAMETER_SKILL_BUTTON + 2, DIAMETER_SKILL_BUTTON + 2);
+		} else if (ratio !== 0) {
+			arc(...BUTTON_ATTACK.attack_two.position, DIAMETER_SKILL_BUTTON + 2, DIAMETER_SKILL_BUTTON + 2, -HALF_PI, ((2 * PI) * (ratio + 0.01)) - HALF_PI);
+		}
+		noStroke();
 	},
 
 	drawPossession: () => {
 
+		noStroke();
 		fill(...COLORS.BLUE_POSSESSION);
 		textSize(40);
 		textAlign(CENTER);
@@ -77,11 +94,7 @@ const GAME_SCREEN_INTERFACE = {
 			rect(...CANVAS_POSSESSION);
 		}
 
-		if (BUTTON_POSSESSION.possession_one.xp === BUTTON_POSSESSION.possession_one.max_xp) {
-			fill(...COLORS.WHITE);
-		} else {
-			fill(...COLORS.WHITE_TRANSPARENT);
-		}
+		fill(...COLORS.WHITE);
 		circle(...BUTTON_POSSESSION.possession_one.position, DIAMETER_SKILL_BUTTON);
 		fill(...COLORS.BLUE_POSSESSION);
 		textAlign(CENTER, CENTER);
@@ -91,11 +104,21 @@ const GAME_SCREEN_INTERFACE = {
 		if (mouseInRect(...BUTTON_POSSESSION.possession_one.position, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true)) {
 			SKILL_SCREEN.drawInformationCompetence("Possession I - " + BUTTON_POSSESSION.possession_one.xp + "/" + BUTTON_POSSESSION.possession_one.max_xp);
 		}
+		ratio = BUTTON_POSSESSION.possession_one.xp / BUTTON_POSSESSION.possession_one.max_xp;
+		strokeWeight(6);
+		stroke(...COLORS.BLUE_POSSESSION);
+		noFill();
+		if (ratio === 1) {
+			circle(...BUTTON_POSSESSION.possession_one.position, DIAMETER_SKILL_BUTTON + 2, DIAMETER_SKILL_BUTTON + 2);
+		} else if (ratio !== 0) {
+			arc(...BUTTON_POSSESSION.possession_one.position, DIAMETER_SKILL_BUTTON + 2, DIAMETER_SKILL_BUTTON + 2, -HALF_PI, ((2 * PI) * (ratio + 0.01)) - HALF_PI);		
+		}
+		noStroke();
 
-		if (BUTTON_POSSESSION.possession_two.xp === BUTTON_POSSESSION.possession_two.max_xp) {
+		if (ratio === 1) {
 			fill(...COLORS.WHITE);
 		} else {
-			fill(...COLORS.WHITE_TRANSPARENT);
+			fill(...COLORS.GREYTRANSPARENT2);
 		}
 		circle(...BUTTON_POSSESSION.possession_two.position, DIAMETER_SKILL_BUTTON);
 		fill(...COLORS.BLUE_POSSESSION);
@@ -106,10 +129,21 @@ const GAME_SCREEN_INTERFACE = {
 		if (mouseInRect(...BUTTON_POSSESSION.possession_two.position, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true)) {
 			SKILL_SCREEN.drawInformationCompetence("Possession II - " + BUTTON_POSSESSION.possession_two.xp + "/" + BUTTON_POSSESSION.possession_two.max_xp);
 		}
+		ratio = BUTTON_POSSESSION.possession_two.xp / BUTTON_POSSESSION.possession_two.max_xp;
+		strokeWeight(6);
+		stroke(...COLORS.BLUE_POSSESSION);
+		noFill();
+		if (ratio === 1) {
+			circle(...BUTTON_POSSESSION.possession_two.position, DIAMETER_SKILL_BUTTON + 2, DIAMETER_SKILL_BUTTON + 2);
+		} else if (ratio !== 0) {
+			arc(...BUTTON_POSSESSION.possession_two.position, DIAMETER_SKILL_BUTTON + 2, DIAMETER_SKILL_BUTTON + 2, -HALF_PI, ((2 * PI) * (ratio + 0.01)) - HALF_PI);
+		}
+		noStroke();
 	},
 
 	drawDefense: () => {
 
+		noStroke();
 		fill(...COLORS.GREEN_SHIELD);
 		textSize(40);
 		textAlign(CENTER);
@@ -125,11 +159,7 @@ const GAME_SCREEN_INTERFACE = {
 			rect(...CANVAS_DEFENSE);
 		}
 
-		if (BUTTON_DEFENSE.defense_one.xp === BUTTON_DEFENSE.defense_one.max_xp) {
-			fill(...COLORS.WHITE);
-		} else {
-			fill(...COLORS.WHITE_TRANSPARENT);
-		}
+		fill(...COLORS.WHITE);
 		circle(...BUTTON_DEFENSE.defense_one.position, DIAMETER_SKILL_BUTTON);
 		fill(...COLORS.GREEN_SHIELD);
 		textAlign(CENTER, CENTER);
@@ -137,13 +167,23 @@ const GAME_SCREEN_INTERFACE = {
 		textSize(22);
 		text(['D'], ...BUTTON_DEFENSE.defense_one.position);
 		if (mouseInRect(...BUTTON_DEFENSE.defense_one.position, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true)) {
-			SKILL_SCREEN.drawInformationCompetence("Réduction résistance I - " + BUTTON_DEFENSE.defense_one.xp + "/" + BUTTON_DEFENSE.defense_one.max_xp);
+			SKILL_SCREEN.drawInformationCompetence("Réduction croyance I - " + BUTTON_DEFENSE.defense_one.xp + "/" + BUTTON_DEFENSE.defense_one.max_xp);
 		}
+		ratio = BUTTON_DEFENSE.defense_one.xp / BUTTON_DEFENSE.defense_one.max_xp;
+		strokeWeight(6);
+		stroke(...COLORS.GREEN_SHIELD);
+		noFill();
+		if (ratio === 1) {
+			circle(...BUTTON_DEFENSE.defense_one.position, DIAMETER_SKILL_BUTTON + 2, DIAMETER_SKILL_BUTTON + 2);
+		} else if (ratio !== 0) {
+			arc(...BUTTON_DEFENSE.defense_one.position, DIAMETER_SKILL_BUTTON + 2, DIAMETER_SKILL_BUTTON + 2, -HALF_PI, ((2 * PI) * (ratio + 0.01)) - HALF_PI);
+		}
+		noStroke();
 
-		if (BUTTON_DEFENSE.defense_two.xp === BUTTON_DEFENSE.defense_two.max_xp) {
+		if (ratio === 1) {
 			fill(...COLORS.WHITE);
 		} else {
-			fill(...COLORS.WHITE_TRANSPARENT);
+			fill(...COLORS.GREYTRANSPARENT2);
 		}
 		circle(...BUTTON_DEFENSE.defense_two.position, DIAMETER_SKILL_BUTTON);
 		fill(...COLORS.GREEN_SHIELD);
@@ -151,16 +191,21 @@ const GAME_SCREEN_INTERFACE = {
 		textSize(22);
 		text(['D'], ...BUTTON_DEFENSE.defense_two.position);
 		if (mouseInRect(...BUTTON_DEFENSE.defense_two.position, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true)) {
-			SKILL_SCREEN.drawInformationCompetence("Réduction résistance II - " + BUTTON_DEFENSE.defense_two.xp + "/" + BUTTON_DEFENSE.defense_two.max_xp);
+			SKILL_SCREEN.drawInformationCompetence("Réduction croyance II - " + BUTTON_DEFENSE.defense_two.xp + "/" + BUTTON_DEFENSE.defense_two.max_xp);
 		}
-
-
-
-		if (BUTTON_DEFENSE.resistance_one.xp === BUTTON_DEFENSE.resistance_one.max_xp) {
-			fill(...COLORS.WHITE);
-		} else {
-			fill(...COLORS.WHITE_TRANSPARENT);
+		ratio = BUTTON_DEFENSE.defense_two.xp / BUTTON_DEFENSE.defense_two.max_xp;
+		strokeWeight(6);
+		stroke(...COLORS.GREEN_SHIELD);
+		noFill();
+		if (ratio === 1) {
+			circle(...BUTTON_DEFENSE.defense_two.position, DIAMETER_SKILL_BUTTON + 2, DIAMETER_SKILL_BUTTON + 2);
+		} else if (ratio !== 0) {
+			arc(...BUTTON_DEFENSE.defense_two.position, DIAMETER_SKILL_BUTTON + 2, DIAMETER_SKILL_BUTTON + 2, -HALF_PI, ((2 * PI) * (ratio + 0.01)) - HALF_PI);
 		}
+		noStroke();
+
+
+		fill(...COLORS.WHITE);
 		circle(...BUTTON_DEFENSE.resistance_one.position, DIAMETER_SKILL_BUTTON);
 		fill(...COLORS.GREEN_SHIELD_DARK);
 		textAlign(CENTER, CENTER);
@@ -169,11 +214,21 @@ const GAME_SCREEN_INTERFACE = {
 		if (mouseInRect(...BUTTON_DEFENSE.resistance_one.position, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true)) {
 			SKILL_SCREEN.drawInformationCompetence("Sabotage recherche I - " + BUTTON_DEFENSE.resistance_one.xp + "/" + BUTTON_DEFENSE.resistance_one.max_xp);
 		}
+		ratio = BUTTON_DEFENSE.resistance_one.xp / BUTTON_DEFENSE.resistance_one.max_xp;
+		strokeWeight(6);
+		stroke(...COLORS.GREEN_SHIELD_DARK);
+		noFill();
+		if (ratio === 1) {
+			circle(...BUTTON_DEFENSE.resistance_one.position, DIAMETER_SKILL_BUTTON + 2, DIAMETER_SKILL_BUTTON + 2);
+		} else if (ratio !== 0) {
+			arc(...BUTTON_DEFENSE.resistance_one.position, DIAMETER_SKILL_BUTTON + 2, DIAMETER_SKILL_BUTTON + 2, -HALF_PI, ((2 * PI) * (ratio + 0.01)) - HALF_PI);
+		}
+		noStroke();
 
-		if (BUTTON_DEFENSE.resistance_two.xp === BUTTON_DEFENSE.resistance_two.max_xp) {
+		if (ratio === 1) {
 			fill(...COLORS.WHITE);
 		} else {
-			fill(...COLORS.WHITE_TRANSPARENT);
+			fill(...COLORS.GREYTRANSPARENT2);
 		}
 		circle(...BUTTON_DEFENSE.resistance_two.position, DIAMETER_SKILL_BUTTON);
 		fill(...COLORS.GREEN_SHIELD_DARK);
@@ -183,6 +238,18 @@ const GAME_SCREEN_INTERFACE = {
 		if (mouseInRect(...BUTTON_DEFENSE.resistance_two.position, DIAMETER_SKILL_BUTTON, DIAMETER_SKILL_BUTTON, true)) {
 			SKILL_SCREEN.drawInformationCompetence("Sabotage recherche II - " + BUTTON_DEFENSE.resistance_two.xp + "/" + BUTTON_DEFENSE.resistance_two.max_xp);
 		}
+		ratio = BUTTON_DEFENSE.resistance_two.xp / BUTTON_DEFENSE.resistance_two.max_xp;
+		strokeWeight(6);
+		stroke(...COLORS.GREEN_SHIELD_DARK);
+		noFill();
+		if (ratio === 1) {
+			circle(...BUTTON_DEFENSE.resistance_two.position, DIAMETER_SKILL_BUTTON + 2, DIAMETER_SKILL_BUTTON + 2);
+		} else if (ratio !== 0) {
+			arc(...BUTTON_DEFENSE.resistance_two.position, DIAMETER_SKILL_BUTTON + 2, DIAMETER_SKILL_BUTTON + 2, -HALF_PI, ((2 * PI) * (ratio + 0.01)) - HALF_PI);
+		}
+		noStroke();
+
+		strokeWeight(0);
 	},
 
 	drawInformationCompetence: (texte) => {

@@ -3,9 +3,8 @@
  */
 const DIAMETER_EXIT_BUTTON = 20;
 
-const EXIT_BUTTON = [SCREEN_HEIGHT / 2 - 250, 550, ];
-//const GAUCHE =
-//const DROITE
+const EXIT_BUTTON = [SCREEN_HEIGHT / 2 - 250, 550];
+
 
 const SKILL_SCREEN = Object.assign({
 	name: SCREEN_NAMES.SKILL,
